@@ -1,4 +1,7 @@
-#include <VirtualWire.h>
+#include <RH_ASK.h>
+#include <SPI.h> // Not actually used but needed to compile
+
+RH_ASK driver;
 
 // Setup for buttons
 const int buttonPin[3] = {2,3,4};
@@ -18,8 +21,8 @@ void setup() {
   Serial.begin(9600);
 
   // Transmitter
-  vw_set_tx_pin(transmit_pin);
-  vw_setup(2000);       // Bits per sec
+  if (!driver.init())
+         Serial.println("init failed");
   pinMode(led_pin, OUTPUT);
   Serial.println("Ready to send!");
   //StartSignal();
@@ -45,6 +48,7 @@ void StartSignal() {
 void SendData(int n, int status){
   char msg[2];
 
+
   switch(n) {
     case 0:
       msg[0] = 'r';
@@ -59,10 +63,17 @@ void SendData(int n, int status){
       msg[1] = status;
       break;
   }
+  unsigned long t0 = millis();
+  
+  driver.send((uint8_t *)msg, strlen(msg));
+  driver.waitPacketSent();
 
-  vw_send((uint8_t *)msg, 2);
-  vw_wait_tx();
+  unsigned long t1 = millis();
 
+  unsigned long t_delta = t1 - t0;
+
+  Serial.print(t_delta);
+  
   Serial.print(n);
   Serial.print(": ");
   Serial.println(status ? "HIGH" : "LOW");
