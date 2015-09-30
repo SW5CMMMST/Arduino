@@ -19,10 +19,13 @@ int i = 0;
 
 void loop()
 {
-    char msg[10];
-    itoa(i, msg, 10);
-    driver.send((uint8_t *)msg, strlen(msg));
+    //int m
+    char aaa[16];
+    //sprintf(aaa, "%d", msg);
+    itoa(i, aaa, 10);
+    driver.send((uint8_t *)aaa, sizeof(aaa));
     driver.waitPacketSent();
     delay(200);
+    Serial.println(i);
     i++;
 }
