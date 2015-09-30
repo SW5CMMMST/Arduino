@@ -1,0 +1,85 @@
+#include <RH_ASK.h>
+#include <Timer.h>
+#include <SPI.h> // Not actualy used but needed to compile
+#define RECV_LED 2
+#define LOSS_LED 3
+#define STAT_LED 13
+#define TEST_LEN 100
+#define TEST_INTERVAL 210 // 10 millis extra per interval, just to be sure
+
+RH_ASK driver;
+Timer t;
+
+void setup() {
+    pinMode(STAT_LED, OUTPUT);
+    pinMode(RECV_LED, OUTPUT);
+    pinMode(LOSS_LED, OUTPUT);
+    
+    Serial.begin(9600);	// Debugging only
+    if (!driver.init())
+         Serial.println("init failed");
+    digitalWrite(STAT_LED, HIGH);
+}
+
+uint32_t cnt = 0;
+uint32_t lastcnt = 0;
+uint8_t missed = 0;
+#ifdef TEST_LEN
+uint32_t starttime = 0;
+#endif
+
+void loop() {
+    t.update();
+    uint8_t buf[RH_ASK_MAX_MESSAGE_LEN];
+    uint8_t buflen = sizeof(buf);
+
+    if (driver.recv(buf, &buflen)) {
+      t.pulse(RECV_LED, 150, LOW);
+      cnt =  *(uint32_t*)buf;
+      if(cnt == lastcnt + 1) {
+        lastcnt = cnt;
+      } else if(cnt < lastcnt || cnt == 0) {
+        lastcnt = 0;
+        missed = 0;
+        #ifdef TEST_LEN
+        starttime = millis();
+        #endif
+        #ifndef VERBOSE
+        Serial.println("Transmission reset");
+        #endif
+      } else {
+        t.pulse(LOSS_LED, 500, LOW);
+        uint8_t curmis = missed;
+        missed += cnt - lastcnt;
+        curmis = missed - curmis;
+        lastcnt = cnt;
+        #ifdef VERBOSE
+        Serial.print("Missed ");
+        Serial.print(curmis);
+        Serial.print(" pkgs - ");
+        Serial.print(missed);
+        Serial.print(" total loss (");
+        Serial.print(((double)missed/(double)cnt)*100);
+        Serial.println(" %)");
+        #endif
+      }
+      #ifdef TEST_LEN
+      if(cnt + 1 == TEST_LEN || millis() > (starttime + TEST_INTERVAL * TEST_LEN)){
+        Serial.print(missed);
+        Serial.print(" \t ");
+        Serial.println(TEST_LEN);
+        digitalWrite(STAT_LED, LOW);
+        while(1){
+          if (driver.recv(buf, &buflen))
+            if(*(uint32_t*)buf < TEST_LEN){
+              t.oscillate(STAT_LED, 100, HIGH, 5);
+              lastcnt = 0;
+              missed = 0;
+              starttime = millis();
+              break; 
+            }
+        } //Hack used to stop execution on arduino until transmitter resets
+      }
+      #endif     
+    }
+}
