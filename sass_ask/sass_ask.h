@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include <RH_ASK.h>
+
 
 extern "C"{
 
@@ -14,9 +14,6 @@ typedef struct {
     uint8_t  msga[12];
 } payload_type;       
 
-bool sendPayload(RH_ASK, payload_type);
-bool recvPayload(RH_ASK, payload_type *);
 void makePayloadString(payload_type, char *);
-
 
 }

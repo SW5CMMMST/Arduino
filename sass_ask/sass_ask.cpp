@@ -1,6 +1,5 @@
+#include <stdio.h>
 #include <sass_ask.h>
-#include <RH_ASK.h>
-#include <SPI.h>
 
 const uint8_t PAYLOAD_SIZE_CONST = 16;
 
@@ -19,18 +18,5 @@ void makePayloadString(payload_type x, char *y) {
 		x.cntd,
 		(char*)x.msga);
 }
-
-bool sendPayload(RH_ASK d, payload_type p){
-	bool result = d.send((uint8_t *)&p, PAYLOAD_SIZE_CONST);
-	delay(100);
-	return result;
-}
-
-bool recvPayload(RH_ASK d, payload_type *p){
-	uint8_t PAYLOAD_SIZE = sizeof(p);
-	bool result = d.recv((uint8_t *)p, &PAYLOAD_SIZE);
-	return result;
-}
-
 
 }
