@@ -5,7 +5,8 @@
 #define LOSS_LED 3
 #define STAT_LED 13
 #define TEST_LEN 100
-#define TEST_INTERVAL 210 // 10 millis extra per interval, just to be sure
+#define TEST_INTERVAL 301 // 10 millis extra per interval, just to be sure
+#define ANT_LEN 34
 
 RH_ASK driver;
 Timer t;
@@ -24,9 +25,7 @@ void setup() {
 uint32_t cnt = 0;
 uint32_t lastcnt = 0;
 uint8_t missed = 0;
-#ifdef TEST_LEN
 uint32_t starttime = 0;
-#endif
 
 void loop() {
     t.update();
@@ -41,10 +40,8 @@ void loop() {
       } else if(cnt < lastcnt || cnt == 0) {
         lastcnt = 0;
         missed = 0;
-        #ifdef TEST_LEN
         starttime = millis();
-        #endif
-        #ifndef VERBOSE
+        #ifdef VERBOSE
         Serial.println("Transmission reset");
         #endif
       } else {
@@ -65,6 +62,8 @@ void loop() {
       }
       #ifdef TEST_LEN
       if(cnt + 1 == TEST_LEN || millis() > (starttime + TEST_INTERVAL * TEST_LEN)){
+        Serial.print(ANT_LEN);
+        Serial.print(" \t ");
         Serial.print(missed);
         Serial.print(" \t ");
         Serial.println(TEST_LEN);

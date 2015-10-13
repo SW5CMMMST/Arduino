@@ -4,7 +4,7 @@
 #define STAT_LED 13
 #define SEND_LED 2
 #define TEST_LEN 100
-#define TEST_INTERVAL 200
+#define TEST_INTERVAL 300
 
 Timer t;
 RH_ASK driver;
