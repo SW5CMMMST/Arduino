@@ -1,5 +1,5 @@
 #include <EEPROM.h>
-#define DEVICE_ADDR 0x89
+#define DEVICE_ADDR 0xCC
 
 void setup()
 {
