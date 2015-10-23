@@ -11,6 +11,7 @@ char payloadString[64];
 #endif
 
 typedef struct {
+  //edited payload used in this network.
     //uint16_t sync : 15;
     //uint8_t  okay :  1;
     uint8_t  slot;
@@ -40,6 +41,7 @@ void makePayload(){
 }
 
 void setupNetwork(){
+  //Set up variables to create a network
   mySlot = 1;
   curSlot = 1;
   slotCount = 2;
@@ -59,17 +61,18 @@ void setup() {
   addr = EEPROM.read(0x00);
   Serial.begin(9600);
   network.set_receiver(receiver_function);
-  int response = network.receive(20000);
+  int response = network.receive(20000);//checks if network exsist
   if(response == ACK){
     connectToNetwork();
   }
-  else{
+  else{ //setup network when therer does'nt excist one
     setupNetwork();
   }
 }
 
 void loop() {
   if(curSlot == mySlot){
+    //Printing to test the code
     Serial.print("Sending (");
     Serial.print(mySlot, HEX);
     Serial.print(", ");
@@ -78,7 +81,8 @@ void loop() {
     long time = millis();
     network.send(BROADCAST, (char*)&out_payload, sizeof(out_payload));
     network.update();
-    delay(SLOTLENGTH-(millis()-time));
+    delay(SLOTLENGTH-(millis()-time));//wait to make sure full sloth length is used
+    //not optimal it uses delay.
   } else {
     Serial.println("Empty slot");
     network.receive(SLOTLENGTH*1000L);
