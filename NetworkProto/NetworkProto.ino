@@ -1,7 +1,7 @@
 #include <EEPROM.h>
+#include <PJON_ASK.h>
 
 #define DEBUG
-#include <PJON_ASK.h>
 #define RX_PIN 11
 #define TX_PIN 12
 #define SLOTLENGTH 300
