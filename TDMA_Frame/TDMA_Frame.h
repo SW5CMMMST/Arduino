@@ -1,4 +1,4 @@
-/* * * * * * * * * * * * * * * * * * * * 
+/* * * * * * * * * * * * * * * * * * * *
  * Mathias Sass Michno     26 OCT 2016 *
  *                                     *
  * Aalborg Universitet       SW503-E15 *
@@ -8,7 +8,7 @@
  * * * * * * * * * * * * * * * * * * * */
 #ifndef TDMA_Frame
 #define TDMA_Frame
-#define MAX_FRAME_LEN 256 
+#define MAX_FRAME_LEN 100 
 #include <stdint.h>
 
 class Frame { 
@@ -16,38 +16,28 @@ class Frame {
     public:
         Timeslot(void); 
         long getLength(); 
-        bool setLength(long len);
+        bool setLength(unsigned long len);
         uint8_t getDeviceAddr();
         bool setDeviceAddr(uint8_t addr);
     private:    
-        long length;
-        uint8_t device_addr;
+        unsigned long _length;
+        uint8_t _device_addr;
         //uint8_t priority;
     };     
 public:
     Frame(void);
-    bool addDevice(uint8_t addr, long timeslot_len);
+    Frame(unsigned int selfTime);
+    bool setSelfTime(unsigned int selfTime);
+    bool addDevice(uint8_t addr, unsigned long timeslot_len);
     bool removeDevice(uint8_t addr);
-    long getWaitTime();
+    unsigned long getWaitTime();
     
 private:
-    Timeslot timeslots[MAX_FRAME_LEN];  
-    long waitTime = 0; 
-    Timeslot* next_free;
-    bool calcWaitTime();
+    Timeslot _timeslots[MAX_FRAME_LEN];  
+    unsigned long _totalFrameTime = 0;
+    unsigned int _selfTime = 0; 
+    Timeslot* _next_free;
+    bool _calcTotalFrameTime();
       
-};
-
-class Timeslot {
-public:
-    Timeslot(void); 
-    long getLength(); 
-    bool setLength(long len);
-    uint8_t getDeviceAddr();
-    bool setDeviceAddr(uint8_t addr);
-private:    
-    long length;
-    uint8_t device_addr;
-    //uint8_t priority;
 };
 #endif

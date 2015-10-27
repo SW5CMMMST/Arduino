@@ -1,6 +1,5 @@
 #include <stdint.h>
 
-
 extern "C"{
 
 typedef enum {IDLE, INIT, PING, REQUEST, RESPOND, ALERT, OK, ERROR} mode_type;

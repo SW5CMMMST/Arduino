@@ -10,11 +10,13 @@
 #define LOSS_LED 3
 #define STAT_LED 13
 #define INIT_WAIT 5000  //Milliseconds to wait before initing own network
+#define COST 200
 
 #ifdef DEBUG
 char payloadString[64];
 #endif
 
+Frame f(COST);
 Timer t;
 RH_ASK driver;
 Addr a;
@@ -24,8 +26,6 @@ payload_type payload_in;
 payload_type payload_out;
 int tx_PID = 0;
 int init_PID = 0;
-uint8_t frame[255];
-uint8_t* nextFree;
 
 void setup() {
   Serial.begin(9600);    // Debugging only
@@ -53,11 +53,9 @@ void rx(payload_type* payload_buffer){
       do_init = false;
     }
     t.pulse(RECV_LED, 150, LOW);
-    if(payload_buffer->mode == INIT && *nextFree == 0 && *(nextFree + sizeof(uint8_t)) == 0){
+    if(payload_buffer->mode == INIT){
       Serial.print("New device!  Addr: ");
       Serial.println(payload_buffer->addr);
-      *nextFree = payload_buffer->addr;
-      nextFree += sizeof(uint8_t);
     }
     #ifdef DEBUG
     makePayloadString(*payload_buffer, payloadString);
@@ -83,10 +81,8 @@ void setupTestPayload(payload_type* payload){
 }
 
 void initNetwork(){
-  frame[0] = a.get();
-  frame[1] = 0x0;
-  nextFree = &frame[1];
-  tx_PID = t.every(200, tx);
+  f.addDevice(a.get(), COST);
+  tx_PID = t.every(f.getWaitTime(), tx);
   t.stop(init_PID);
   do_init = false;
 }
