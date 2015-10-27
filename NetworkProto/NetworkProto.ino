@@ -78,15 +78,19 @@ void setup() {
 }
 
 void loop() {
+  long time = millis();
   if(curSlot == mySlot){
-    long time = millis();
+    // Set payload for transmission
     network.send(BROADCAST, (char*)&out_payload, sizeof(out_payload));
+    // Send the package
     network.update();
-    delay(SLOTLENGTH-(millis()-time));//wait to make sure full sloth length is used
-    //not optimal it uses delay.
   } else {
+    // Recieve 
     network.receive(SLOTLENGTH*1000L);
   }
+  // Wait until next timeslot
+  delay(SLOTLENGTH-(millis()-time));
+  // Update the timeslot
   curSlot--;
   if(curSlot == -1){
     curSlot = slotCount - 1;
