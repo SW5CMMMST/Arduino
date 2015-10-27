@@ -1,11 +1,12 @@
 #include <RH_ASK.h>
 #include <Timer.h>
 #include <SPI.h> // Not actualy used but needed to compile
+#define VERBOSE
 #define RECV_LED 2
 #define LOSS_LED 3
 #define STAT_LED 13
 #define TEST_LEN 100
-#define TEST_INTERVAL 301 // 10 millis extra per interval, just to be sure
+#define TEST_INTERVAL 201 // 10 millis extra per interval, just to be sure
 #define ANT_LEN 34
 
 RH_ASK driver;
@@ -35,6 +36,10 @@ void loop() {
     if (driver.recv(buf, &buflen)) {
       t.pulse(RECV_LED, 150, LOW);
       cnt =  *(uint32_t*)buf;
+      #ifdef VERBOSE
+      Serial.print("Received msg #");
+      Serial.println(cnt);
+      #endif
       if(cnt == lastcnt + 1) {
         lastcnt = cnt;
       } else if(cnt < lastcnt || cnt == 0) {
@@ -47,17 +52,14 @@ void loop() {
       } else {
         t.pulse(LOSS_LED, 500, LOW);
         uint8_t curmis = missed;
-        missed += cnt - lastcnt;
+        missed += cnt - lastcnt - 1;
         curmis = missed - curmis;
         lastcnt = cnt;
         #ifdef VERBOSE
         Serial.print("Missed ");
         Serial.print(curmis);
         Serial.print(" pkgs - ");
-        Serial.print(missed);
-        Serial.print(" total loss (");
-        Serial.print(((double)missed/(double)cnt)*100);
-        Serial.println(" %)");
+        Serial.println(missed);
         #endif
       }
       #ifdef TEST_LEN
@@ -71,7 +73,7 @@ void loop() {
         while(1){
           if (driver.recv(buf, &buflen))
             if(*(uint32_t*)buf < TEST_LEN){
-              t.oscillate(STAT_LED, 100, HIGH, 5);
+              //t.oscillate(STAT_LED, 100, HIGH, 5);
               lastcnt = 0;
               missed = 0;
               starttime = millis();
