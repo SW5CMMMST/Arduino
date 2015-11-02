@@ -19,7 +19,7 @@ typedef struct {
 // Initialize PJON library
 //PJON_ASK network(RX_PIN, TX_PIN, EEPROM.read(0x00));
 
-RH_ASK driver;
+RH_ASK driver(2000, RX_PIN, TX_PIN, 10, false);
 // Message buffers
 payload_type out_payload;
 payload_type in_payload;
@@ -41,11 +41,21 @@ void receiver_function(uint8_t len, uint8_t *payload) {
   Serial.println();
 } */
 
+void printHex(uint8_t *data, uint8_t len){
+  char buf[16];
+  for(int i = 0; i < len; i++){
+    sprintf(buf, "%02X ", data[i]);
+    Serial.print(buf);
+  }
+}
+
 // Initializes the payload to use the current data
 void makePayload(){
   out_payload.addr = addr;
   out_payload.slot = mySlot;
   out_payload.slotCount = slotCount;
+  //printHex((uint8_t *)&out_payload, sizeof(out_payload));
+  //Serial.println();
 }
 
 // Setup variables needed to create a new network
@@ -65,9 +75,14 @@ void connectToNetwork(){
   // Setup payload and make it ready for sending
   makePayload();
   //network.send(BROADCAST, (char*)&out_payload, sizeof(out_payload));
-  
+  Serial.print("R: ");
+  printHex((uint8_t *)&in_payload, sizeof(in_payload));
+  Serial.println();
   // Wait for the empty slot
-  delay((in_payload.slot - 1)*SLOTLENGTH);
+  int timeToEmpty = (in_payload.slot-1)*SLOTLENGTH;
+  Serial.println("Waiting until empty slot: ");
+  Serial.println(timeToEmpty);
+  delay(timeToEmpty);
   driver.send((uint8_t*)&out_payload, sizeof(out_payload));
   driver.waitPacketSent();
   // Send the package
@@ -85,6 +100,10 @@ void setup() {
   pinMode(13, OUTPUT);
   // Set the reciver function to be called by the library
   //network.set_receiver(receiver_function);
+  if(!driver.init()){
+    Serial.println("RadioHead failed to initialize.");
+    while(true){}
+  }
   // Look for 20 seconds for an existing network
   Serial.println("Looking for network...");
   //int response = network.receive(5000000L);
@@ -93,7 +112,7 @@ void setup() {
   payload_type buf;
   while(timer + 10000 > millis()){
     uint8_t len = sizeof(payload_type);
-    if(driver.recv((uint8_t*)&buf, &len)){
+    if(driver.recv((uint8_t*)&in_payload, &len)){
       response = 1;
       //receiver_function(len, &buf);
       break;
@@ -113,32 +132,38 @@ void setup() {
 }
 
 void loop() {
-  Serial.print("Slot: ");
-  Serial.println(curSlot);
   long time = millis();
+  Serial.print(curSlot);
   if(curSlot == mySlot){
+    Serial.print("t: ");
     digitalWrite(13, HIGH);
     // Set payload for transmission
     //network.send(BROADCAST, (char*)&out_payload, sizeof(out_payload));
     // Send the package
     //network.update();
-
+    printHex((uint8_t *)&out_payload, sizeof(out_payload));
     driver.send((uint8_t*)&out_payload, sizeof(out_payload));
     driver.waitPacketSent();
   } else {
+    Serial.print("r: ");
     // Recieve 
-    payload_type buf;
+    // payload_type buf;
     while(time + MAX_RECEIVE_TIME > millis()){
       uint8_t len = sizeof(payload_type);
-      if(driver.recv((uint8_t*)&buf, &len)){
+      if(driver.recv((uint8_t*)&in_payload, &len)){
+        printHex((uint8_t *)&in_payload, sizeof(in_payload));
+        if(curSlot == 0 && in_payload.slot == slotCount){
+          slotCount++;
+        }
         //receiver_function(len, buf);
         break;
       }
     }
   }
+  Serial.println();
   // Wait until next timeslot
   int timeleft = SLOTLENGTH-(millis()-time);
-  if(timeleft<0) delay(timeleft);
+  if(timeleft>0) delay(timeleft);
   // Update the timeslot
   curSlot--;
   if(curSlot == -1){
