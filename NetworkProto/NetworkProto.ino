@@ -8,13 +8,14 @@
 #define TX_PIN 12
 #define SLOTLENGTH 300  // Slot length in miliseconds
 #define MAX_RECEIVE_TIME SLOTLENGTH - 50
-#define DEFAULT_TIME 32
+#define DEFAULT_TIME 0x84
+#define GUARDTIME 10
 
 typedef struct {
     uint8_t  slot;      // Current slot also doubles as count down to the empty slot
     uint8_t  slotCount; // Number of slots in the frame
     uint8_t  addr;      // Unique address of the sender
-    uint8_t  d_time     // The time it typically takes to send a message
+    uint8_t  d_time;    // The time it typically takes to send a message
     uint8_t  msga[5];   // Other content
 } payload_type; 
 
@@ -82,12 +83,11 @@ void connectToNetwork(){
   printHex((uint8_t *)&in_payload, sizeof(in_payload));
   Serial.println();
   // Wait for the empty slot
-  int timeToEmpty = in_payload.slot*SLOTLENGTH-in_payload.d_time;
-  Serial.println("Waiting until empty slot: ");
-  Serial.println(timeToEmpty);
-  delay(timeToEmpty);
+  int timeToEmpty = (in_payload.slot*SLOTLENGTH)-in_payload.d_time;
+  delay(timeToEmpty+GUARDTIME);
+  long time = millis();
   driver.send((uint8_t*)&out_payload, sizeof(out_payload));
-  driver.waitPacketSent();
+  delay(SLOTLENGTH - (millis() - time));  
   // Send the package
   //network.update();
 }
@@ -142,7 +142,7 @@ void loop() {
     Serial.print("t: ");
     digitalWrite(13, HIGH);
     printHex((uint8_t *)&out_payload, sizeof(out_payload));
-    delay(10); // Guard time
+    delay(GUARDTIME); // Guard time
     driver.send((uint8_t*)&out_payload, sizeof(out_payload));
     driver.waitPacketSent();
     out_payload.d_time = millis()-time;
