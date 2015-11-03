@@ -8,11 +8,13 @@
 #define TX_PIN 12
 #define SLOTLENGTH 300  // Slot length in miliseconds
 #define MAX_RECEIVE_TIME SLOTLENGTH - 50
+#define DEFAULT_TIME 32
 
 typedef struct {
     uint8_t  slot;      // Current slot also doubles as count down to the empty slot
     uint8_t  slotCount; // Number of slots in the frame
     uint8_t  addr;      // Unique address of the sender
+    uint8_t  d_time     // The time it typically takes to send a message
     uint8_t  msga[5];   // Other content
 } payload_type; 
 
@@ -54,6 +56,7 @@ void makePayload(){
   out_payload.addr = addr;
   out_payload.slot = mySlot;
   out_payload.slotCount = slotCount;
+  out_payload.d_time = DEFAULT_TIME;
   //printHex((uint8_t *)&out_payload, sizeof(out_payload));
   //Serial.println();
 }
@@ -79,7 +82,7 @@ void connectToNetwork(){
   printHex((uint8_t *)&in_payload, sizeof(in_payload));
   Serial.println();
   // Wait for the empty slot
-  int timeToEmpty = (in_payload.slot-1)*SLOTLENGTH;
+  int timeToEmpty = in_payload.slot*SLOTLENGTH-in_payload.d_time;
   Serial.println("Waiting until empty slot: ");
   Serial.println(timeToEmpty);
   delay(timeToEmpty);
@@ -134,20 +137,17 @@ void setup() {
 void loop() {
   long time = millis();
   Serial.print(curSlot);
+  long next = time + SLOTLENGTH;
   if(curSlot == mySlot){
     Serial.print("t: ");
     digitalWrite(13, HIGH);
-    // Set payload for transmission
-    //network.send(BROADCAST, (char*)&out_payload, sizeof(out_payload));
-    // Send the package
-    //network.update();
     printHex((uint8_t *)&out_payload, sizeof(out_payload));
+    delay(10); // Guard time
     driver.send((uint8_t*)&out_payload, sizeof(out_payload));
     driver.waitPacketSent();
+    out_payload.d_time = millis()-time;
   } else {
     Serial.print("r: ");
-    // Recieve 
-    // payload_type buf;
     while(time + MAX_RECEIVE_TIME > millis()){
       uint8_t len = sizeof(payload_type);
       if(driver.recv((uint8_t*)&in_payload, &len)){
@@ -155,14 +155,14 @@ void loop() {
         if(curSlot == 0 && in_payload.slot == slotCount){
           slotCount++;
         }
-        //receiver_function(len, buf);
+        next = millis() - in_payload.d_time + SLOTLENGTH;
         break;
       }
     }
   }
   Serial.println();
   // Wait until next timeslot
-  int timeleft = SLOTLENGTH-(millis()-time);
+  int timeleft = next - millis();
   if(timeleft>0) delay(timeleft);
   // Update the timeslot
   curSlot--;
