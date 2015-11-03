@@ -10,19 +10,20 @@
 #define MAX_RECEIVE_TIME SLOTLENGTH - 50
 #define DEFAULT_TIME 0x84
 #define GUARDTIME 10
+#define BAUD 2400
 
 typedef struct {
     uint8_t  slot;      // Current slot also doubles as count down to the empty slot
     uint8_t  slotCount; // Number of slots in the frame
     uint8_t  addr;      // Unique address of the sender
     uint8_t  d_time;    // The time it typically takes to send a message
-    uint8_t  msga[5];   // Other content
+    uint8_t  msg[4];    // Other content
 } payload_type; 
 
 // Initialize PJON library
 //PJON_ASK network(RX_PIN, TX_PIN, EEPROM.read(0x00));
 
-RH_ASK driver(2000, RX_PIN, TX_PIN, 10, false);
+RH_ASK driver(BAUD, RX_PIN, TX_PIN, 10, false);
 // Message buffers
 payload_type out_payload;
 payload_type in_payload;
@@ -101,6 +102,8 @@ void setup() {
   pinMode(TX_PIN, OUTPUT);
   pinMode(RX_PIN, INPUT);
   pinMode(13, OUTPUT);
+  pinMode(3, INPUT);
+  pinMode(4, OUTPUT);
   // Set the reciver function to be called by the library
   //network.set_receiver(receiver_function);
   if(!driver.init()){
@@ -140,7 +143,7 @@ void loop() {
   long next = time + SLOTLENGTH;
   if(curSlot == mySlot){
     Serial.print("t: ");
-    digitalWrite(13, HIGH);
+    out_payload.msg[0] = digitalRead(3);
     printHex((uint8_t *)&out_payload, sizeof(out_payload));
     delay(GUARDTIME); // Guard time
     driver.send((uint8_t*)&out_payload, sizeof(out_payload));
@@ -155,6 +158,7 @@ void loop() {
         if(curSlot == 0 && in_payload.slot == slotCount){
           slotCount++;
         }
+        digitalWrite(13, in_payload.msg[0]);
         next = millis() - in_payload.d_time + SLOTLENGTH;
         break;
       }
@@ -169,5 +173,4 @@ void loop() {
   if(curSlot == -1){
     curSlot = slotCount - 1;
   }
-  digitalWrite(13, LOW);
 }
