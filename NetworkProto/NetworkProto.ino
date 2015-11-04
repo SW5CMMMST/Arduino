@@ -157,6 +157,7 @@ void loop() {
         printHex((uint8_t *)&in_payload, sizeof(in_payload));
         if(curSlot == 0 && in_payload.slot == slotCount){
           slotCount++;
+          out_payload.slotCount = slotCount;
         }
         digitalWrite(13, in_payload.msg[0]);
         next = millis() - in_payload.d_time + SLOTLENGTH;
