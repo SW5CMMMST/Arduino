@@ -6,12 +6,12 @@
 #include <EEPROM.h>
 #include <Addr.h>
 #include <Timer.h>
-#include <sass_ask.h>
+#include <Payload.h>
 #define RECV_LED 2
 #define LOSS_LED 3
 #define STAT_LED 13
 #define INIT_WAIT 5000  //Milliseconds to wait before initing own network
-#define COST 2000
+#define COST 200
 
 #ifdef DEBUG
 char payloadString[40];
@@ -23,10 +23,11 @@ RH_ASK driver;
 Addr a;
 uint16_t sync = 0;
 bool do_init = true;
-payload_type payload_in;
-payload_type payload_out;
 int tx_PID = 0;
 int init_PID = 0;
+int app_PID = 0;
+Payload p_in  = Payload(0,0,0);
+Payload p_out = Payload(0,0,a.get());
 
 void setup() {
   Serial.begin(9600);    // Debugging only
@@ -36,54 +37,45 @@ void setup() {
   pinMode(RECV_LED, OUTPUT);
   pinMode(LOSS_LED, OUTPUT);
   Serial.println(F("Ready"));
-  setupTestPayload(&payload_out);
   t.after(INIT_WAIT, initNetwork);
 }
 
 void loop() {
   t.update();
-  rx(&payload_in);
+  rx();
 }
 
-void rx(payload_type* payload_buffer){
-  uint8_t len = sizeof(payload_type);
-  if(driver.recv((uint8_t*)payload_buffer, &len)){
+void rx(){
+  uint8_t len = 0;
+  uint8_t buff[24];
+  if(driver.recv(buff, &len)){
+    p_in.setSlot(buff[0]);
+    p_in.setSlotCnt(buff[1]);
+    p_in.setAddr(buff[2]);
+    for(uint8_t i = 3; i < len; i++){
+      p_in.addData(buff[i]);  
+    }   
     //DO stuff here
     if(do_init){
       t.stop(init_PID);
       do_init = false;
     }
     t.pulse(RECV_LED, 150, LOW);
-    if(payload_buffer->mode == INIT){
+    if(p_in.getSlot() == p_in.getSlotCnt()){
       #ifdef VERBOSE
       Serial.print(F("New device!  Addr: "));
-      Serial.println(payload_buffer->addr);
+      Serial.println(p_in.getAddr());
       #endif
     }
-    #ifdef DEBUG
-    makePayloadString(*payload_buffer, payloadString);
-    Serial.print(payloadString);
-    #endif
   }
 }
 
 void tx(){
-  driver.send((uint8_t *)&payload_out, sizeof(payload_type));
+  driver.send(p_out.getPayloadAsStream(), p_out.getStreamLength());
   driver.waitPacketSent();
   #ifdef VERBOSE
   Serial.println(F("Payload transmitted!"));
   #endif
-}
-
-void setupTestPayload(payload_type* payload){
-  payload->addr = a.get();
-  payload->sync = 100 & 0x7FFF;
-  payload->okay = true;
-  payload->mode = PING;
-  payload->cntd = 0;
-  payload->msga[0] = (uint8_t)'h';
-  payload->msga[1] = (uint8_t)'e';
-  payload->msga[2] = (uint8_t)'j'; 
 }
 
 void initNetwork(){
@@ -98,13 +90,10 @@ void initNetwork(){
   Serial.println(F("Network initiated!"));
   Serial.print(F("Wait time: "));
   Serial.println(f.getWaitTime());
-  f.debugN1(0);
-  f.debugN1(1);
   #endif
   t.stop(init_PID);
 }
 
 void expandNetwork(uint8_t addr, long cost){
-  f.addDevice(addr, cost);
-   
+  f.addDevice(addr, cost);  
 }

@@ -1,6 +1,6 @@
 #pragma once
 #include <stdint.h>
-#include <string> 
+#include <Arduino.h>
 #define NUM_HEAD_ELEMENTS 3
 
 class Payload { 
@@ -12,16 +12,17 @@ public:
     bool setSlot(uint8_t slot);
     bool setSlotCnt(uint8_t slotCnt);
     bool setAddr(uint8_t addr);
-    bool setData(std::string data);
-    bool addData(std::string data);
+    bool setData(String data);
+    bool addData(String data);
+    bool addData(char dataChar);
     uint8_t getSlot();
     uint8_t getSlotCnt();
     uint8_t getAddr();
-    std::string getData();
+    String getData();
     
 private:
     uint8_t _slot;
     uint8_t _slotCnt;
     uint8_t _addr; 
-    std::string _data;  
+    String _data;  
 };    

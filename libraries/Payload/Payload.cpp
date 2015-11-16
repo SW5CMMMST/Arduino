@@ -32,17 +32,23 @@ bool Payload::setAddr(uint8_t addr){
     return true;
 }   
 
-bool Payload::setData(std::string data){
+bool Payload::setData(String data){
     //TODO validate
     this->_data = data;
     return true;
 }
 
-bool Payload::addData(std::string data){
+bool Payload::addData(String data){
     //TODO validate
     this->_data += data;
     return true;
-}       
+}
+
+bool Payload::addData(char dataChar){
+    //TODO validate
+    this->_data += dataChar;
+    return true;
+}        
 
 uint8_t Payload::getSlot(){
     return this->_slot;
@@ -56,6 +62,6 @@ uint8_t Payload::getAddr(){
     return this->_addr;
 }         
 
-std::string Payload::getData(){
+String Payload::getData(){
     return this->_data;
 }     
