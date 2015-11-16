@@ -1,4 +1,5 @@
 #define DEBUG
+#define VERBOSE
 #include <TDMA_Frame.h>
 #include <RH_ASK.h>
 #include <SPI.h>
@@ -10,10 +11,10 @@
 #define LOSS_LED 3
 #define STAT_LED 13
 #define INIT_WAIT 5000  //Milliseconds to wait before initing own network
-#define COST 200
+#define COST 2000
 
 #ifdef DEBUG
-char payloadString[64];
+char payloadString[40];
 #endif
 
 Frame f(COST);
@@ -30,13 +31,13 @@ int init_PID = 0;
 void setup() {
   Serial.begin(9600);    // Debugging only
     if (!driver.init())
-         Serial.println("init failed");
+         Serial.println(F("Init failed!"));
   pinMode(STAT_LED, OUTPUT);
   pinMode(RECV_LED, OUTPUT);
   pinMode(LOSS_LED, OUTPUT);
-  Serial.println("ready");
+  Serial.println(F("Ready"));
   setupTestPayload(&payload_out);
-  t.after(INIT_WAIT, initNetwork); 
+  t.after(INIT_WAIT, initNetwork);
 }
 
 void loop() {
@@ -54,8 +55,10 @@ void rx(payload_type* payload_buffer){
     }
     t.pulse(RECV_LED, 150, LOW);
     if(payload_buffer->mode == INIT){
-      Serial.print("New device!  Addr: ");
+      #ifdef VERBOSE
+      Serial.print(F("New device!  Addr: "));
       Serial.println(payload_buffer->addr);
+      #endif
     }
     #ifdef DEBUG
     makePayloadString(*payload_buffer, payloadString);
@@ -67,6 +70,9 @@ void rx(payload_type* payload_buffer){
 void tx(){
   driver.send((uint8_t *)&payload_out, sizeof(payload_type));
   driver.waitPacketSent();
+  #ifdef VERBOSE
+  Serial.println(F("Payload transmitted!"));
+  #endif
 }
 
 void setupTestPayload(payload_type* payload){
@@ -81,8 +87,24 @@ void setupTestPayload(payload_type* payload){
 }
 
 void initNetwork(){
-  f.addDevice(a.get(), COST);
+  #ifdef VERBOSE
+  Serial.println(F("Initiating network..."));
+  #endif
+  if(f.addDevice(a.get(), COST))
+    Serial.println(F("Added myself"));
   tx_PID = t.every(f.getWaitTime(), tx);
-  t.stop(init_PID);
   do_init = false;
+  #ifdef VERBOSE
+  Serial.println(F("Network initiated!"));
+  Serial.print(F("Wait time: "));
+  Serial.println(f.getWaitTime());
+  f.debugN1(0);
+  f.debugN1(1);
+  #endif
+  t.stop(init_PID);
+}
+
+void expandNetwork(uint8_t addr, long cost){
+  f.addDevice(addr, cost);
+   
 }

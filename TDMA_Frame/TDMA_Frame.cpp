@@ -51,9 +51,7 @@ unsigned long Frame::getWaitTime() {
 bool Frame::_calcTotalFrameTime() {
     _totalFrameTime = 0;
     for(uint8_t i = 0; i <= MAX_FRAME_LEN-1; ++i){
-        if(_timeslots[i].getDeviceAddr() != 0x0){
-            _totalFrameTime += _timeslots[i].getLength();
-        }        
+            _totalFrameTime += _timeslots[i].getLength();      
     }
     return true; 
 }         
