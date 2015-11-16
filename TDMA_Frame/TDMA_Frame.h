@@ -8,7 +8,8 @@
  * * * * * * * * * * * * * * * * * * * */
 #ifndef TDMA_Frame
 #define TDMA_Frame
-#define MAX_FRAME_LEN 100 
+#define MAX_FRAME_LEN 32
+#define EMPTY_SLOT_LEN 200 
 #include <stdint.h>
 
 class Frame { 
@@ -22,7 +23,6 @@ class Frame {
     private:    
         unsigned long _length;
         uint8_t _device_addr;
-        //uint8_t priority;
     };     
 public:
     Frame(void);
@@ -30,14 +30,16 @@ public:
     bool setSelfTime(unsigned int selfTime);
     bool addDevice(uint8_t addr, unsigned long timeslot_len);
     bool removeDevice(uint8_t addr);
-    unsigned long getWaitTime();
+    long getWaitTime(); 
+    void debugN1(uint8_t n);
     
 private:
     Timeslot _timeslots[MAX_FRAME_LEN];  
     unsigned long _totalFrameTime = 0;
     unsigned int _selfTime = 0; 
-    Timeslot* _next_free;
+    uint8_t _next_free_index;
     bool _calcTotalFrameTime();
+    bool _maintainEmptySlot(bool inc);
       
 };
 #endif
