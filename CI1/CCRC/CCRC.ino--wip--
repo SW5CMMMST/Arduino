@@ -1,0 +1,186 @@
+#define DEBUG
+#define VERBOSE
+#include <RH_ASK.h>
+#include <SPI.h>
+#include <EEPROM.h>
+#include <Addr.h>
+#define DELTA_COM 400
+#define DELTA_PROC 400
+#define TIMESLOT_LEN (DELTA_COM + DELTA_PROC)
+#define INIT_WAIT (3 * TIMESLOT_LEN)
+#define PAYLOAD_MAX_SIZE 16
+
+typedef struct {
+    uint8_t CurrentSlot;
+    uint8_t SlotCount;
+    uint8_t Address;
+} payloadHead;
+
+typedef struct {
+    payloadHead head;
+    uint8_t data[13]; // So total size is 16
+} payload;
+
+typedef struct {
+    uint8_t n; // number of timeslots
+    uint8_t k; // the timeslot of this device
+    uint8_t i; // the timeslot currently in progress
+} networkStatus;
+
+RH_ASK rh;
+uint8_t address = 0x0;
+payload inPayload;
+payload outPayload;
+unsigned long x = 0;
+uint8_t payloadBuffer[PAYLOAD_MAX_SIZE];
+networkStatus netStat; 
+bool foundNetwork = false;
+
+void setup() {
+    Serial.begin(9600);
+    // Init radiohead
+    if (!rh.init())
+        Serial.println(F("Init failed!"));
+
+    Serial.println(F("Device started"));
+    outPayload.data[1] = (uint8_t) '\0';
+    // Get the address of the device
+    Addr a;
+    address = a.get();
+    Serial.print(F("Address is 0x"));
+    Serial.println(address, HEX);
+
+    // x ← 0
+    resetClock(&x);
+
+    foundNetwork = false;
+    
+    while(getClock(&x) <= INIT_WAIT && !foundNetwork) {
+        if(rx()) {
+            // FOUND NETWORK
+            if(inPayload.head.SlotCount > 1){
+                netStat.i = inPayload.head.CurrentSlot;
+                netStat.n = inPayload.head.SlotCount;            
+                netStat.k = netStat.n - 1; // EmptySlot, is 0-indexed
+                setPayloadHead(&outPayload, netStat.i,  netStat.n + 1, address);
+                foundNetwork = true;
+            }else{
+                resetClock(&x);
+            }
+        }
+    }
+
+    if(!foundNetwork) {
+        // Create new network
+        netStat.n = 2;
+        netStat.k = 0;
+        netStat.i = 1; // Such that when we loop it increments to 
+        outPayload.head.CurrentSlot = 0;
+        outPayload.head.SlotCount = 2;
+        outPayload.head.Address = address;
+    }
+
+    Serial.print(F("SlotCount: "));
+    Serial.println(netStat.n);
+    Serial.print(F("Slot: "));
+    Serial.println(netStat.i);
+    Serial.print(F("My spot: "));
+    Serial.println(netStat.k);
+
+    resetClock(&x);
+}
+
+void loop() {
+    while(getClock(&x) <= DELTA_PROC) {/* Do User Code */}
+    nextSlot(); 
+    Serial.print("Slot: ");
+    Serial.print(netStat.i);
+    Serial.print("\t");   
+    if(netStat.i == netStat.k) {
+        // Transmit!
+        Serial.println("Tx");
+        tx();
+        resetClock(&x);
+    } else {
+        // Receive!
+        foundNetwork = false;
+        Serial.println("Rx");
+        while(getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
+            if(rx()){
+                Serial.println("Eureka!");
+                reSync();
+                foundNetwork = true;
+            }
+        }
+        resetClock(&x);
+    }
+}
+
+void readPayloadFromBuffer(payload* payloadDest, uint8_t plSize) {
+    Serial.print("READ FUCK FACE \t");
+    Serial.println(plSize);
+    Serial.print(payloadBuffer[1]);
+    Serial.print(payloadBuffer[2]);
+    memcpy(payloadDest, payloadBuffer, plSize);
+}
+
+void _printPayload(payload in) {
+    Serial.println(F("Payload:"));
+    Serial.print(F("\tCurrentSlot: "));
+    Serial.println(in.head.CurrentSlot);
+
+    Serial.print(F("\tSlotCount: "));
+    Serial.println(in.head.SlotCount);
+
+    Serial.print(F("\tAddress: "));
+    Serial.println(in.head.Address);
+}
+
+bool rx() {
+    uint8_t payloadBufferSize = 0;
+    if(rh.recv(payloadBuffer,&payloadBufferSize)) {
+        readPayloadFromBuffer(&inPayload, payloadBufferSize);
+        _printPayload(inPayload);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+void writePayloadToBuffer(payload* payloadSrc) {
+    memcpy(payloadBuffer, payloadSrc, PAYLOAD_MAX_SIZE);
+}
+
+void tx() {
+    writePayloadToBuffer(&outPayload);
+    rh.send(payloadBuffer, PAYLOAD_MAX_SIZE);
+    rh.waitPacketSent();
+}
+
+unsigned long getClock(unsigned long * x_0){
+    return millis() - *x_0; 
+}
+
+void resetClock(unsigned long * x_0) {
+    *x_0 = millis();
+}
+
+void setPayloadHead(payload* p, uint8_t curSlot, uint8_t slotCnt, uint8_t addr){
+    p->head.CurrentSlot = curSlot;
+    p->head.SlotCount = slotCnt;
+    p->head.Address = addr;  
+}
+
+void nextSlot(){
+    netStat.i = (netStat.i + 1) % netStat.n; // This is 0-indexed
+    outPayload.head.CurrentSlot = netStat.i;  
+}
+
+void reSync(){
+	//This is naively assuming that the transmitting device is right
+    netStat.i = inPayload.head.CurrentSlot;
+    if(inPayload.head.SlotCount == 0)
+        Serial.println("Something went wrong...");
+    netStat.n = inPayload.head.SlotCount;
+}
+
