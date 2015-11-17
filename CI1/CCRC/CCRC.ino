@@ -4,8 +4,8 @@
 #include <SPI.h>
 #include <EEPROM.h>
 #include <Addr.h>
-#define DELTA_COM 300
-#define DELTA_PROC 200
+#define DELTA_COM 400
+#define DELTA_PROC 400
 #define TIMESLOT_LEN DELTA_COM + DELTA_PROC
 #define INIT_WAIT 3 * TIMESLOT_LEN
 #define PAYLOAD_MAX_SIZE 16
@@ -110,11 +110,11 @@ void loop() {
     }
 }
 
-void decodePayload() {
-    memcpy(&inPayload, &payloadBuffer, PAYLOAD_MAX_SIZE);
+void decodePayload(uint8_t plSize) {
+    memcpy(&inPayload, &payloadBuffer, plSize);
 }
 
-void printPayload(payload in) {
+void _printPayload(payload in) {
     Serial.print(F("CurrentSlot: "));
     Serial.println(in.head.CurrentSlot);
 
@@ -127,8 +127,8 @@ void printPayload(payload in) {
 
 bool rx() {
     if(rh.recv(payloadBuffer,&payloadBufferSize)) {
-        decodePayload();
-        printPayload(inPayload);
+        decodePayload(payloadBufferSize);
+        _printPayload(inPayload);
         return true;
     } else {
         return false;
@@ -141,7 +141,7 @@ void encodePayload() {
 
 void tx() {
     encodePayload();
-    rh.send(payloadBuffer, payloadBufferSize);
+    rh.send(payloadBuffer, PAYLOAD_MAX_SIZE);
     rh.waitPacketSent();
 }
 
