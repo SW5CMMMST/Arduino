@@ -111,7 +111,7 @@ void loop() {
 }
 
 void decodePayload(uint8_t plSize) {
-    memcpy(&inPayload, &payloadBuffer, plSize);
+    memcpy(&inPayload, payloadBuffer, plSize);
 }
 
 void _printPayload(payload in) {
@@ -136,7 +136,7 @@ bool rx() {
 }
 
 void encodePayload() {
-    memcpy(&payloadBuffer, &inPayload, PAYLOAD_MAX_SIZE);
+    memcpy(payloadBuffer, &outPayload, PAYLOAD_MAX_SIZE);
 }
 
 void tx() {
