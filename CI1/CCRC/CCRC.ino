@@ -5,11 +5,11 @@
 #include <EEPROM.h>
 #include <Addr.h>
 #define DELTA_COM 400
-#define DELTA_PROC 400
+#define DELTA_PROC 200
 #define TIMESLOT_LEN (DELTA_COM + DELTA_PROC)
 #define INIT_WAIT (5 * TIMESLOT_LEN)
 #define PAYLOAD_MAX_SIZE 16
-#define GUARD_TIME_BEFORE_TX 15
+#define GUARD_TIME_BEFORE_TX 30
 
 struct payloadHead {
     uint8_t currentSlot;
@@ -65,9 +65,9 @@ void setup() {
             Serial.println(F("Found Network, joining!!"));
             if(inPayload.header.slotCount > 1) {
                 netStat.i = inPayload.header.currentSlot;
-                netStat.n = inPayload.header.slotCount;            
-                netStat.k = netStat.n - 1; // EmptySlot, is 0-indexed
-                setPayloadHead(&outPayload, netStat.i,  netStat.n + 1, address);
+                netStat.n = inPayload.header.slotCount + 1;
+                netStat.k = inPayload.header.slotCount; // EmptySlot, is 0-indexed
+                setPayloadHead(&outPayload, netStat.i,  netStat.n, address);
                 foundNetwork = true;
             } else {
                 resetClock(&x);
@@ -113,9 +113,11 @@ void loop() {
         // Receive!
         foundNetwork = false;
         Serial.println("Rx");
+        long t_0 = millis();
         while(getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
             if(rx()){
                 Serial.println("Eureka!");
+                Serial.println(millis() - t_0);
                 reSync();
                 foundNetwork = true;
             }
@@ -124,10 +126,10 @@ void loop() {
     }
 }
 
-int readsPayloadFromBuffer(struct payload* payloadDest, uint8_t* payloadBuffer, uint8_t plSize) {
+void readsPayloadFromBuffer(struct payload* payloadDest, uint8_t* payloadBuffer, uint8_t plSize) {
     payloadDest->header.currentSlot = payloadBuffer[0];
     payloadDest->header.slotCount = payloadBuffer[1];    
-    return 0;
+    payloadDest->header.address = payloadBuffer[2];    
 }
 
 void _printPayload(struct payload in) {
@@ -170,6 +172,7 @@ void tx() {
     payloadBuffer[0] = outPayload.header.currentSlot;
     payloadBuffer[1] = outPayload.header.slotCount;
     payloadBuffer[2] = address;
+    rh.printBuffer("Sent:", payloadBuffer, PAYLOAD_MAX_SIZE);
     rh.send(payloadBuffer, PAYLOAD_MAX_SIZE);
     rh.waitPacketSent();
 }
