@@ -184,6 +184,9 @@ unsigned long getClock(unsigned long * x_0){
 }
 
 void resetClock(unsigned long * x_0) {
+    if(millis() < *x_0)
+        Serial.println(F("Timer overflowed ..."));
+
     *x_0 = millis();
 }
 
