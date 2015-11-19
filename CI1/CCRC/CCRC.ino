@@ -42,6 +42,8 @@ uint32_t counter = 0;
 /* END GLOBAL VARIABLES */
 
 void setup() {
+    // DELAY START
+    delay(5000);
     Serial.begin(9600);
     // Init radiohead
     if (!rh.init())
@@ -207,6 +209,11 @@ void reSync(){
     if(inPayload.header.slotCount > netStat.n) {
       outPayload.header.slotCount = inPayload.header.slotCount;
       netStat.n = inPayload.header.slotCount;
+    }
+
+    if(inPayload.header.currentSlot != netStat.i) {
+        Serial.println(F("Resynced!"));
+        netStat.i = inPayload.header.currentSlot;
     }
 }
 
