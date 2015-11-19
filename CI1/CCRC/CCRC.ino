@@ -46,6 +46,8 @@ void setup() {
     if (!rh.init())
         Serial.println(F("Init failed!"));
 
+    pinMode(13, OUTPUT);
+
     Serial.println(F("Device started"));
     outPayload.data[1] = (uint8_t) '\0';
     // Get the address of the device
@@ -53,20 +55,19 @@ void setup() {
     address = a.get();
     Serial.print(F("address is 0x"));
     Serial.println(address, HEX);
-
-    // x ← 0
     resetClock(&x);
 
     foundNetwork = false;
     
     while(getClock(&x) <= INIT_WAIT && !foundNetwork) {
         if(rx()) {
+            digitalWrite(13, HIGH);
             // FOUND NETWORK
             Serial.println(F("Found Network, joining!!"));
             if(inPayload.header.slotCount > 1) {
                 netStat.i = inPayload.header.currentSlot;
                 netStat.n = inPayload.header.slotCount + 1;
-                netStat.k = inPayload.header.slotCount; // EmptySlot, is 0-indexed
+                netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
                 setPayloadHead(&outPayload, netStat.i,  netStat.n, address);
                 foundNetwork = true;
             } else {
@@ -150,23 +151,15 @@ bool rx() {
     uint8_t payloadBufferSize = sizeof(payloadBuffer);
     if(rh.recv(payloadBuffer,&payloadBufferSize)) {
         rh.printBuffer("Got:", payloadBuffer, payloadBufferSize);
-        if(payloadBufferSize == 0) {
-          Serial.println(F("Payload size is zero, wtf"));
-        }
         readsPayloadFromBuffer(&inPayload, payloadBuffer, payloadBufferSize);
-        _printPayload(inPayload);
+        // _printPayload(inPayload);
         return true;
     } else {
         return false;
     }
 }
 
-void writePayloadToBuffer(struct payload* payloadSrc) {
-    // memcpy(payloadBuffer, payloadSrc, PAYLOAD_MAX_SIZE);
-}
-
 void tx() {
-    //writePayloadToBuffer(&outPayload);
     uint8_t payloadBuffer[PAYLOAD_MAX_SIZE];
     memset(payloadBuffer, 'a', sizeof(payloadBuffer));
     payloadBuffer[0] = outPayload.header.currentSlot;
@@ -197,10 +190,12 @@ void nextSlot(){
 }
 
 void reSync(){
-	//This is naively assuming that the transmitting device is right
-    netStat.i = inPayload.header.currentSlot;
     if(inPayload.header.slotCount == 0)
         Serial.println("Something went wrong...");
-    netStat.n = inPayload.header.slotCount;
+    if(inPayload.header.slotCount > netStat.n) {
+      outPayload.header.slotCount = inPayload.header.slotCount;
+      netStat.n = inPayload.header.slotCount;
+    }
 }
+
 
