@@ -37,6 +37,7 @@ struct payload outPayload;
 unsigned long x = 0;
 struct networkStatus netStat; 
 bool foundNetwork = false;
+uint32_t counter = 0;
 
 /* END GLOBAL VARIABLES */
 
@@ -100,6 +101,13 @@ void setup() {
 void loop() {
     while(getClock(&x) <= DELTA_PROC) {/* Do User Code */}
     nextSlot(); 
+    Serial.println(F("===================================="));
+    if(0 == netStat.i) {
+      Serial.println(F(""));
+      Serial.println(F("++++++++++++++++++++++++++++++++++++"));
+      Serial.println(F(""));
+      Serial.println(F("===================================="));
+    }
     Serial.print("Slot: ");
     Serial.print(netStat.i);
     Serial.print("\t");   
@@ -117,7 +125,7 @@ void loop() {
         long t_0 = millis();
         while(getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
             if(rx()){
-                Serial.println("Eureka!");
+                Serial.print(F("Actual time taken to recive: "));
                 Serial.println(millis() - t_0);
                 reSync();
                 foundNetwork = true;
@@ -165,8 +173,9 @@ void tx() {
     payloadBuffer[0] = outPayload.header.currentSlot;
     payloadBuffer[1] = outPayload.header.slotCount;
     payloadBuffer[2] = address;
-    rh.printBuffer("Sent:", payloadBuffer, PAYLOAD_MAX_SIZE);
-    rh.send(payloadBuffer, PAYLOAD_MAX_SIZE);
+    payloadBuffer[3] = (++counter) % 256;
+    rh.printBuffer("Sent:", payloadBuffer, PAYLOAD_MAX_SIZE - 12);
+    rh.send(payloadBuffer, PAYLOAD_MAX_SIZE - 12);
     rh.waitPacketSent();
 }
 
