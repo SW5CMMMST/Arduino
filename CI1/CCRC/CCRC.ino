@@ -50,6 +50,12 @@ void setup() {
         Serial.println(F("Init failed!"));
 
     pinMode(13, OUTPUT);
+    if(address == 0xAD) { 
+        pinMode(2, INPUT);
+        pinMode(3, INPUT);
+    } else {
+        pinMode(3, OUTPUT);
+    }
 
     Serial.println(F("Device started"));
     outPayload.data[1] = (uint8_t) '\0';
@@ -101,7 +107,18 @@ void setup() {
 }
 
 void loop() {
-    while(getClock(&x) <= DELTA_PROC) {/* Do User Code */}
+    bool runOnce = false;
+    while(getClock(&x) <= DELTA_PROC) {
+        if(!runOnce) {
+            for(int i = 0; i < sizeof(inPayload.data); i++) {
+                if(inPayload.data[i] == address) {
+                    digitalWrite(3, inPayload.data[i + 1] == 1 ? HIGH : LOW);
+                } 
+            }
+            runOnce = true;
+        }
+    }
+        
     nextSlot(); 
     Serial.println(F("===================================="));
     if(0 == netStat.i) {
@@ -118,7 +135,19 @@ void loop() {
         Serial.println("Tx");
         // Guard time
         delay(GUARD_TIME_BEFORE_TX);
-        tx();
+        if(address == 0xAD) { 
+            uint8_t data[PAYLOAD_MAX_SIZE - sizeof(payloadHead)];
+            uint8_t dataSize = 0;
+            
+            data[dataSize++] = 0x13;
+            data[dataSize++] = !digitalRead(2);
+
+            data[dataSize++] = 0x89;
+            data[dataSize++] = !digitalRead(3);
+            tx(data, dataSize);
+        } else {
+            tx(NULL, 0);
+        }
         resetClock(&x);
     } else {
         // Receive!
@@ -140,7 +169,10 @@ void loop() {
 void readsPayloadFromBuffer(struct payload* payloadDest, uint8_t* payloadBuffer, uint8_t plSize) {
     payloadDest->header.currentSlot = payloadBuffer[0];
     payloadDest->header.slotCount = payloadBuffer[1];    
-    payloadDest->header.address = payloadBuffer[2];    
+    payloadDest->header.address = payloadBuffer[2];
+    for(int i = 0; i < plSize - sizeof(payloadHead); i++) {
+        payloadDest->data[i] = payloadBuffer[sizeof(payloadHead) + i]; 
+    }
 }
 
 void _printPayload(struct payload in) {
@@ -169,15 +201,18 @@ bool rx() {
     }
 }
 
-void tx() {
+void tx(uint8_t * data, uint8_t dataSize) {
     uint8_t payloadBuffer[PAYLOAD_MAX_SIZE];
     memset(payloadBuffer, 'a', sizeof(payloadBuffer));
     payloadBuffer[0] = outPayload.header.currentSlot;
     payloadBuffer[1] = outPayload.header.slotCount;
     payloadBuffer[2] = address;
-    payloadBuffer[3] = (++counter) % 256;
-    rh.printBuffer("Sent:", payloadBuffer, PAYLOAD_MAX_SIZE - 12);
-    rh.send(payloadBuffer, PAYLOAD_MAX_SIZE - 12);
+    //payloadBuffer[3] = (++counter) % 256;
+    for(int i = 0; i < dataSize; i++) {
+        payloadBuffer[sizeof(payloadHead) + i] = data[i];
+    }
+    rh.printBuffer("Sent:", payloadBuffer, sizeof(payloadHead) + dataSize);
+    rh.send(payloadBuffer, sizeof(payloadHead) + dataSize);
     rh.waitPacketSent();
 }
 
