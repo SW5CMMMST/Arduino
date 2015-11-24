@@ -1,5 +1,6 @@
 /*  Mode defines  */
 #define DEBUG
+#define TEST
 
 /*  Library includes  */
 #include <RH_ASK.h>
@@ -16,7 +17,6 @@
 #define GUARD_TIME_BEFORE_TX 30
 
 /*  Data structures  */
-
 struct payloadHead {
     uint8_t currentSlot;
     uint8_t slotCount;
@@ -35,7 +35,6 @@ struct networkStatus {
 };
 
 /*  Global Variables  */
-
 RH_ASK rh;
 uint8_t address = 0x0;
 struct payload inPayload;
@@ -80,7 +79,9 @@ void setup() {
     Serial.println(address, HEX);
 #endif
     resetClock(&x);
-
+#ifdef TEST
+    printTask(true, 0);
+#endif
     foundNetwork = false;
     
     while(getClock(&x) <= INIT_WAIT && !foundNetwork) {
@@ -96,12 +97,9 @@ void setup() {
                 netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
                 setPayloadHead(&outPayload, netStat.i,  netStat.n, address);
                 foundNetwork = true;
-            } else {
-                resetClock(&x);
             }
         }
     }
-
     if(!foundNetwork) {
         // Create new network
         netStat.n = 2;
@@ -124,13 +122,19 @@ void setup() {
     Serial.println(netStat.k);
 #endif
 
+#ifdef TEST
+    printTask(false, 0);
+#endif
     resetClock(&x);
 }
 
 /*  Main loop  */
-
 void loop() {
     bool runOnce = false;
+
+#ifdef TEST
+    printTask(true, 3);
+#endif
     while(getClock(&x) <= DELTA_PROC) {
         if(!runOnce) {
             for(int i = 0; i < sizeof(inPayload.data); i++) {
@@ -141,7 +145,10 @@ void loop() {
             runOnce = true;
         }
     }
-        
+       
+#ifdef TEST
+    printTask(false, 3);
+#endif
     nextSlot(); 
 #ifdef DEBUG
     Serial.println(F("===================================="));
@@ -156,6 +163,10 @@ void loop() {
     Serial.print("\t");   
 #endif
     if(netStat.i == netStat.k) {
+        
+#ifdef TEST
+    printTask(true, 2);
+#endif
         // Transmit!
 #ifdef DEBUG
         Serial.println("Tx");
@@ -175,8 +186,14 @@ void loop() {
         } else {
             tx(NULL, 0);
         }
+#ifdef TEST
+    printTask(false, 2);
+#endif
         resetClock(&x);
     } else {
+#ifdef TEST
+    printTask(true, 1);
+#endif
         // Receive!
         foundNetwork = false;
 #ifdef DEBUG
@@ -193,6 +210,9 @@ void loop() {
                 foundNetwork = true;
             }
         }
+#ifdef TEST
+    printTask(false, 1);
+#endif
         resetClock(&x);
     }
 }
@@ -290,3 +310,17 @@ void reSync(){
     }
 }
 
+#ifdef TEST
+void printTask(bool start, uint8_t taskID){
+    if(start) {
+        Serial.print(addr);
+        Serial.print("\t");
+        Serial.print(millis());
+        Serial.print("\t");
+        return;
+    }
+    Serial.print(millis());
+    Serial.print("\t");
+    Serial.println(taskID);
+}
+#endif
