@@ -1,5 +1,4 @@
 /*  Mode defines  */
-#define DEBUG
 #define TEST
 
 /*  Library includes  */
@@ -48,9 +47,7 @@ uint32_t counter = 0;
 void setup() {
     // DELAY START
     delay(5000);
-#ifdef DEBUG
     Serial.begin(9600);
-#endif
     // Init radiohead
     if (!rh.init()) {
 #ifdef DEBUG
@@ -245,7 +242,9 @@ bool rx() {
     memset(payloadBuffer, 'a', sizeof(payloadBuffer));
     uint8_t payloadBufferSize = sizeof(payloadBuffer);
     if(rh.recv(payloadBuffer,&payloadBufferSize)) {
+#ifdef DEBUG       
         rh.printBuffer("Got:", payloadBuffer, payloadBufferSize);
+#endif        
         readsPayloadFromBuffer(&inPayload, payloadBuffer, payloadBufferSize);
         return true;
     } else {
@@ -313,7 +312,7 @@ void reSync(){
 #ifdef TEST
 void printTask(bool start, uint8_t taskID){
     if(start) {
-        Serial.print(addr);
+        Serial.print(address);
         Serial.print("\t");
         Serial.print(millis());
         Serial.print("\t");
