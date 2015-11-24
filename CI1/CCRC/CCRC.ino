@@ -39,6 +39,7 @@ uint8_t address = 0x0;
 struct payload inPayload;
 struct payload outPayload;
 unsigned long x = 0;
+unsigned long y = 0;
 struct networkStatus netStat; 
 bool foundNetwork = false;
 uint32_t counter = 0;
@@ -70,14 +71,14 @@ void setup() {
     address = a.get();
 #ifdef DEBUG
     Serial.println(F("Device started"));
-#endif
-#ifdef DEBUG
     Serial.print(F("Address is 0x"));
     Serial.println(address, HEX);
 #endif
     resetClock(&x);
 #ifdef TEST
-    printTask(true, 0);
+    Serial.print("Device ");
+    Serial.println(address, HEX);
+    resetClock(&y); 
 #endif
     foundNetwork = false;
     
@@ -120,7 +121,7 @@ void setup() {
 #endif
 
 #ifdef TEST
-    printTask(false, 0);
+    printTask("connecting", getClock(&y));
 #endif
     resetClock(&x);
 }
@@ -130,7 +131,7 @@ void loop() {
     bool runOnce = false;
 
 #ifdef TEST
-    printTask(true, 3);
+    resetClock(&y);
 #endif
     while(getClock(&x) <= DELTA_PROC) {
         if(!runOnce) {
@@ -144,7 +145,7 @@ void loop() {
     }
        
 #ifdef TEST
-    printTask(false, 3);
+    printTask(usercode, getClock(&y));
 #endif
     nextSlot(); 
 #ifdef DEBUG
@@ -162,7 +163,7 @@ void loop() {
     if(netStat.i == netStat.k) {
         
 #ifdef TEST
-    printTask(true, 2);
+   resetClock(&y);
 #endif
         // Transmit!
 #ifdef DEBUG
@@ -184,12 +185,12 @@ void loop() {
             tx(NULL, 0);
         }
 #ifdef TEST
-    printTask(false, 2);
+    printTask("Tx", getClock(&y));
 #endif
         resetClock(&x);
     } else {
 #ifdef TEST
-    printTask(true, 1);
+   resetClock(&y);
 #endif
         // Receive!
         foundNetwork = false;
@@ -208,7 +209,7 @@ void loop() {
             }
         }
 #ifdef TEST
-    printTask(false, 1);
+    printTask("Rx", getClock(&y));
 #endif
         resetClock(&x);
     }
@@ -310,16 +311,9 @@ void reSync(){
 }
 
 #ifdef TEST
-void printTask(bool start, uint8_t taskID){
-    if(start) {
-        Serial.print(address);
-        Serial.print("\t");
-        Serial.print(millis());
-        Serial.print("\t");
-        return;
-    }
-    Serial.print(millis());
+void printTask(const char* mode, unsigned long time){
+    Serial.print(mode);
     Serial.print("\t");
-    Serial.println(taskID);
+    Serial.println(time);
 }
 #endif
