@@ -1,5 +1,5 @@
 /*  Mode defines  */
-#define TEST
+#define DEBUG
 
 /*  Library includes  */
 #include <RH_ASK.h>
@@ -8,8 +8,8 @@
 #include <Addr.h>
 
 /*  Symbolic constants  */
-#define DELTA_COM 400
-#define DELTA_PROC 200
+#define DELTA_COM 200
+#define DELTA_PROC 50
 #define TIMESLOT_LEN (DELTA_COM + DELTA_PROC)
 #define INIT_WAIT (5 * TIMESLOT_LEN)
 #define PAYLOAD_MAX_SIZE 16
@@ -37,7 +37,9 @@ struct networkStatus {
 RH_ASK rh;
 uint8_t address = 0x0;
 struct payload inPayload;
+uint8_t inPayloadSize;
 struct payload outPayload;
+uint8_t outPayloadSize;
 unsigned long x = 0;
 unsigned long y = 0;
 struct networkStatus netStat; 
@@ -89,15 +91,14 @@ void setup() {
 #ifdef DEBUG
             Serial.println(F("Found Network, joining!!"));
 #endif
-            if(inPayload.header.slotCount > 1) {
-                netStat.i = inPayload.header.currentSlot;
-                netStat.n = inPayload.header.slotCount + 1;
-                netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
-                setPayloadHead(&outPayload, netStat.i,  netStat.n, address);
-                foundNetwork = true;
-            }
+            netStat.i = inPayload.header.currentSlot;
+            netStat.n = inPayload.header.slotCount + 1;
+            netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
+            setPayloadHead(&outPayload, netStat.i,  netStat.n, address);
+            foundNetwork = true;
         }
     }
+    
     if(!foundNetwork) {
         // Create new network
         netStat.n = 2;
@@ -106,9 +107,13 @@ void setup() {
         outPayload.header.currentSlot = 0;
         outPayload.header.slotCount = 2;
         outPayload.header.address = address;
+
+        resetClock(&x);
 #ifdef DEBUG
         Serial.println("Found no network, starting own");
 #endif
+    } else {
+       waitForNextTimeslot(inPayloadSize);
     }
 
 #ifdef DEBUG
@@ -123,7 +128,7 @@ void setup() {
 #ifdef TEST
     printTask("connecting", getClock(&y));
 #endif
-    resetClock(&x);
+    
 }
 
 /*  Main loop  */
@@ -145,7 +150,7 @@ void loop() {
     }
        
 #ifdef TEST
-    printTask(usercode, getClock(&y));
+    printTask("usercode", getClock(&y));
 #endif
     nextSlot(); 
 #ifdef DEBUG
@@ -180,14 +185,16 @@ void loop() {
 
             data[dataSize++] = 0x89;
             data[dataSize++] = !digitalRead(3);
+            outPayloadSize = sizeof(payloadHead) + dataSize;
             tx(data, dataSize);
         } else {
+            outPayloadSize = sizeof(payloadHead);
             tx(NULL, 0);
         }
 #ifdef TEST
     printTask("Tx", getClock(&y));
 #endif
-        resetClock(&x);
+        waitForNextTimeslot(outPayloadSize);
     } else {
 #ifdef TEST
    resetClock(&y);
@@ -210,12 +217,49 @@ void loop() {
         }
 #ifdef TEST
     printTask("Rx", getClock(&y));
-#endif
-        resetClock(&x);
+#endif  
+        if(foundNetwork) {
+            waitForNextTimeslot(inPayloadSize);    
+        } else {
+            resetClock(&x);
+        }
     }
 }
 
+void waitForNextTimeslot(uint32_t payloadSize) {
+    /* Here we wait until the timeslot is over. 
+     * To sync with the network we wait untill their timeslot is over.
+     * Worst case wait time: f(x) = 6.0101 ∗ x + 65.7826 
+     * f(PAYLOAD_MAX_SIZE) = f(16) = 161.9416 [ms]
+     * f(PAYLOAD_MAX_SIZE) + GUARD_TIME_BEFORE_TX = 191.9416 [ms]
+     * Which is strictly less than DELTA_COM (200 [ms])
+     * 
+     * To calculate the start of the next slot we take the size of the message
+     * recived, and calculate how much is left of the timeslot.
+     * Then we hope we are correct and it syncs up.
+     */
+
+     // inPayloadSize is always in the range [3;16]
+     // So sentTime is: [83,8129; 161,9416] with floats and [84;162] with integers
+     // Rounding to integers, accurate within +-0.2
+     uint32_t sentTime = 66 + (6 * payloadSize);
+     
+     // Will be from 200 -  84 - 30 = 86 
+     //           to 200 - 162 - 30 = 8
+     uint32_t timeLeft = DELTA_COM - GUARD_TIME_BEFORE_TX - sentTime;
+
+     resetClock(&x);
+#ifdef DEBUG
+     Serial.print("Waiting for: ");
+     Serial.print(timeLeft);
+     Serial.println(" [ms]");
+#endif 
+     while(getClock(&x) <= timeLeft);
+     resetClock(&x);
+}
+
 void readsPayloadFromBuffer(struct payload* payloadDest, uint8_t* payloadBuffer, uint8_t plSize) {
+    inPayloadSize = plSize;
     payloadDest->header.currentSlot = payloadBuffer[0];
     payloadDest->header.slotCount = payloadBuffer[1];    
     payloadDest->header.address = payloadBuffer[2];
