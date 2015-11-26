@@ -52,7 +52,7 @@ uint8_t inPayloadSize = 0;
 struct payload outPayload;
 uint8_t outPayloadSize = 0;
 unsigned long x = 0;
-struct networkStatus netStat; 
+struct networkStatus netStat;
 uint8_t usercodeData[13];
 uint8_t usercodeDataSize = 0;
 
@@ -74,7 +74,7 @@ void setup() {
     }
 
     pinMode(13, OUTPUT);
-    
+
     outPayload.data[1] = (uint8_t) '\0';
     // Get the address of the device
     Addr a;
@@ -88,10 +88,10 @@ void setup() {
 #ifdef TEST
     Serial.print("Device ");
     Serial.println(address, HEX);
-    resetClock(&y); 
+    resetClock(&y);
 #endif
     bool foundNetwork = false;
-    
+
     while(getClock(&x) <= INIT_WAIT && !foundNetwork) {
         if(rx()) {
             digitalWrite(13, HIGH);
@@ -106,12 +106,12 @@ void setup() {
             foundNetwork = true;
         }
     }
-    
+
     if(!foundNetwork) {
         // Create new network
         netStat.n = 2;
         netStat.k = 0;
-        netStat.i = 1; // Such that when we loop it increments to 
+        netStat.i = 1; // Such that when we loop it increments to
         outPayload.header.currentSlot = 0;
         outPayload.header.slotCount = 2;
         outPayload.header.address = address;
@@ -136,7 +136,7 @@ void setup() {
 #ifdef TEST
     printTask("connecting", getClock(&y));
 #endif
-    
+
 }
 
 /*  Main loop  */
@@ -149,7 +149,7 @@ void loop() {
     while(getClock(&x) <= DELTA_PROC) {
         userCodeRepeat();
     }
-       
+
 #ifdef TEST
     printTask("usercode", getClock(&y));
 #endif
@@ -164,10 +164,10 @@ void loop() {
     }
     Serial.print("Slot: ");
     Serial.print(netStat.i);
-    Serial.print("\t");   
+    Serial.print("\t");
 #endif
     if(netStat.i == netStat.k) {
-        
+
 #ifdef TEST
    resetClock(&y);
 #endif
@@ -213,10 +213,14 @@ void loop() {
             }
         }
 #ifdef TEST
-    printTask("Rx", getClock(&y));
-#endif  
+    if(netStat.i == netStat.n - 1) {
+        printTask("EmptySlot", getClock(&y));
+    } else {
+        printTask("Rx", getClock(&y));
+    }
+#endif
         if(foundNetwork) {
-            waitForNextTimeslot(inPayloadSize);    
+            waitForNextTimeslot(inPayloadSize);
         } else {
             resetClock(&x);
         }
@@ -224,13 +228,13 @@ void loop() {
 }
 
 void waitForNextTimeslot(uint32_t payloadSize) {
-    /* Here we wait until the timeslot is over. 
+    /* Here we wait until the timeslot is over.
      * To sync with the network we wait untill their timeslot is over.
-     * Worst case wait time: f(x) = 6.0101 ∗ x + 65.7826 
+     * Worst case wait time: f(x) = 6.0101 ∗ x + 65.7826
      * f(PAYLOAD_MAX_SIZE) = f(16) = 161.9416 [ms]
      * f(PAYLOAD_MAX_SIZE) + GUARD_TIME_BEFORE_TX = 191.9416 [ms]
      * Which is strictly less than DELTA_COM (200 [ms])
-     * 
+     *
      * To calculate the start of the next slot we take the size of the message
      * recived, and calculate how much is left of the timeslot.
      * Then we hope we are correct and it syncs up.
@@ -240,8 +244,8 @@ void waitForNextTimeslot(uint32_t payloadSize) {
      // So sentTime is: [83,8129; 161,9416] with floats and [84;162] with integers
      // Rounding to integers, accurate within +-0.2
      uint32_t sentTime = 66 + (6 * payloadSize);
-     
-     // Will be from 200 -  84 - 30 = 86 
+
+     // Will be from 200 -  84 - 30 = 86
      //           to 200 - 162 - 30 = 8
      uint32_t timeLeft = DELTA_COM - GUARD_TIME_BEFORE_TX - sentTime;
 
@@ -250,7 +254,10 @@ void waitForNextTimeslot(uint32_t payloadSize) {
      Serial.print("Waiting for: ");
      Serial.print(timeLeft);
      Serial.println(" [ms]");
-#endif 
+#endif
+#ifdef TEST
+    printTask("BuzyWaiting", timeLeft);
+#endif
      while(getClock(&x) <= timeLeft);
      resetClock(&x);
 }
@@ -258,10 +265,10 @@ void waitForNextTimeslot(uint32_t payloadSize) {
 void readsPayloadFromBuffer(struct payload* payloadDest, uint8_t* payloadBuffer, uint8_t plSize) {
     inPayloadSize = plSize;
     payloadDest->header.currentSlot = payloadBuffer[0];
-    payloadDest->header.slotCount = payloadBuffer[1];    
+    payloadDest->header.slotCount = payloadBuffer[1];
     payloadDest->header.address = payloadBuffer[2];
     for(int i = 0; i < plSize - sizeof(payloadHead); i++) {
-        payloadDest->data[i] = payloadBuffer[sizeof(payloadHead) + i]; 
+        payloadDest->data[i] = payloadBuffer[sizeof(payloadHead) + i];
     }
 }
 
@@ -284,9 +291,9 @@ bool rx() {
     memset(payloadBuffer, 'a', sizeof(payloadBuffer));
     uint8_t payloadBufferSize = sizeof(payloadBuffer);
     if(rh.recv(payloadBuffer,&payloadBufferSize)) {
-#ifdef DEBUG       
+#ifdef DEBUG
         rh.printBuffer("Got:", payloadBuffer, payloadBufferSize);
-#endif        
+#endif
         readsPayloadFromBuffer(&inPayload, payloadBuffer, payloadBufferSize);
         return true;
     } else {
@@ -311,7 +318,7 @@ void tx(uint8_t * data, uint8_t dataSize) {
 }
 
 unsigned long getClock(unsigned long * x_0){
-    return millis() - *x_0; 
+    return millis() - *x_0;
 }
 
 void resetClock(unsigned long * x_0) {
@@ -325,12 +332,12 @@ void resetClock(unsigned long * x_0) {
 void setPayloadHead(struct payload* p, uint8_t curSlot, uint8_t slotCnt, uint8_t addr){
     p->header.currentSlot = curSlot;
     p->header.slotCount = slotCnt;
-    p->header.address = addr;  
+    p->header.address = addr;
 }
 
 void nextSlot(){
     netStat.i = (netStat.i + 1) % netStat.n; // This is 0-indexed
-    outPayload.header.currentSlot = netStat.i;  
+    outPayload.header.currentSlot = netStat.i;
 }
 
 void reSync(){
@@ -361,13 +368,13 @@ void printTask(const char* mode, unsigned long time){
 
 /* Place user code which should be executed once pr. timeslot */
 void userCodeRunonce() {
-    if(address == SENDER_ADDRESS) { 
+    if(address == SENDER_ADDRESS) {
         pinMode(SENDER_SENSOR_1, INPUT_PULLUP);
         pinMode(SENDER_SENSOR_2, INPUT_PULLUP);
         usercodeData[0] = RECEIVER_1_ADDRESS;
         usercodeData[2] = RECEIVER_2_ADDRESS;
         usercodeDataSize = 4;
-        
+
         // Reset right after transmission
         if(netStat.i == netStat.k) {
             usercodeData[1] = LOW;
@@ -380,7 +387,7 @@ void userCodeRunonce() {
         for(int i = 0; i < sizeof(inPayload.data); i++) {
             if(inPayload.data[i] == address) {
                 digitalWrite(RECEIVER_OUTPIN, inPayload.data[i + 1] == 1 ? HIGH : LOW);
-            } 
+            }
         }
         usercodeDataSize = 0;
     }
