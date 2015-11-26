@@ -141,43 +141,13 @@ void setup() {
 
 /*  Main loop  */
 void loop() {
-
-  
-    bool runOnce = false;
-
 #ifdef TEST
     resetClock(&y);
 #endif
-    while(getClock(&x) <= DELTA_PROC) {
-        if(!runOnce) {
-            if(address == SENDER_ADDRESS) { 
-                pinMode(SENDER_SENSOR_1, INPUT);
-                pinMode(SENDER_SENSOR_2, INPUT);
-                usercodeDataSize = 0;
 
-                // Do a true reading right after transmission
-                if(netStat.n == netStat.k) {
-                    usercodeData[1] = !digitalRead(SENDER_SENSOR_1);
-                    usercodeData[3] = !digitalRead(SENDER_SENSOR_2);
-                }
-                
-                usercodeData[usercodeDataSize++] = RECEIVER_1_ADDRESS;
-                usercodeData[usercodeDataSize++] |= !digitalRead(SENDER_SENSOR_1);
-    
-                usercodeData[usercodeDataSize++] = RECEIVER_2_ADDRESS;
-                usercodeData[usercodeDataSize++] |= !digitalRead(SENDER_SENSOR_2);
-            } else {
-                pinMode(RECEIVER_OUTPIN, OUTPUT);
-                for(int i = 0; i < sizeof(inPayload.data); i++) {
-                    if(inPayload.data[i] == address) {
-                        digitalWrite(RECEIVER_OUTPIN, inPayload.data[i + 1] == 1 ? HIGH : LOW);
-                    } 
-                }
-                usercodeDataSize = 0;
-            }
-            
-            runOnce = true;
-        }
+    userCodeRunonce();
+    while(getClock(&x) <= DELTA_PROC) {
+        userCodeRepeat();
     }
        
 #ifdef TEST
@@ -389,11 +359,46 @@ void printTask(const char* mode, unsigned long time){
 }
 #endif
 
-#ifdef DO_SENSOR_POOLING
-void userSensorPool() {
-    usercodeData[1] |= !digitalRead(SENDER_SENSOR_1);
-    
-    usercodeData[3] |= !digitalRead(SENDER_SENSOR_2);
+/* Place user code which should be executed once pr. timeslot */
+void userCodeRunonce() {
+    if(address == SENDER_ADDRESS) { 
+        pinMode(SENDER_SENSOR_1, INPUT_PULLUP);
+        pinMode(SENDER_SENSOR_2, INPUT_PULLUP);
+        usercodeData[0] = RECEIVER_1_ADDRESS;
+        usercodeData[2] = RECEIVER_2_ADDRESS;
+        usercodeDataSize = 4;
+        
+        // Reset right after transmission
+        if(netStat.i == netStat.k) {
+            usercodeData[1] = LOW;
+            usercodeData[3] = LOW;
+        }
+
+        userSensorPool();
+    } else {
+        pinMode(RECEIVER_OUTPIN, OUTPUT);
+        for(int i = 0; i < sizeof(inPayload.data); i++) {
+            if(inPayload.data[i] == address) {
+                digitalWrite(RECEIVER_OUTPIN, inPayload.data[i + 1] == 1 ? HIGH : LOW);
+            } 
+        }
+        usercodeDataSize = 0;
+    }
 }
-#endif
+
+/* Place user code which should be executed repeatly here */
+void userCodeRepeat() {
+    // Intentionally left blank
+}
+
+/* Place user code which should be executed repeatly here concurrently while reciving */
+void userSensorPool() {
+    if(digitalRead(SENDER_SENSOR_1) == LOW) {
+        usercodeData[1] = HIGH;
+    }
+
+    if(digitalRead(SENDER_SENSOR_2) == LOW) {
+        usercodeData[3] = HIGH;
+    }
+}
 
