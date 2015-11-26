@@ -15,6 +15,17 @@
 #define PAYLOAD_MAX_SIZE 16
 #define GUARD_TIME_BEFORE_TX 30
 
+/* User code constants */
+#define DO_SENSOR_POOLING
+#define SENDER_ADDRESS 0xAD
+#define RECEIVER_OUTPIN 3
+
+#define SENDER_SENSOR_1 2
+#define RECEIVER_1_ADDRESS 0x13
+
+#define SENDER_SENSOR_2 3
+#define RECEIVER_2_ADDRESS 0x89
+
 /*  Data structures  */
 struct payloadHead {
     uint8_t currentSlot;
@@ -37,14 +48,17 @@ struct networkStatus {
 RH_ASK rh;
 uint8_t address = 0x0;
 struct payload inPayload;
-uint8_t inPayloadSize;
+uint8_t inPayloadSize = 0;
 struct payload outPayload;
-uint8_t outPayloadSize;
+uint8_t outPayloadSize = 0;
 unsigned long x = 0;
-unsigned long y = 0;
 struct networkStatus netStat; 
-bool foundNetwork = false;
-uint32_t counter = 0;
+uint8_t usercodeData[13];
+uint8_t usercodeDataSize = 0;
+
+#ifdef TEST
+unsigned long y = 0;
+#endif
 
 /*  Setup function  */
 void setup() {
@@ -60,13 +74,7 @@ void setup() {
     }
 
     pinMode(13, OUTPUT);
-    if(address == 0xAD) { 
-        pinMode(2, INPUT);
-        pinMode(3, INPUT);
-    } else {
-        pinMode(3, OUTPUT);
-    }
-
+    
     outPayload.data[1] = (uint8_t) '\0';
     // Get the address of the device
     Addr a;
@@ -82,7 +90,7 @@ void setup() {
     Serial.println(address, HEX);
     resetClock(&y); 
 #endif
-    foundNetwork = false;
+    bool foundNetwork = false;
     
     while(getClock(&x) <= INIT_WAIT && !foundNetwork) {
         if(rx()) {
@@ -133,6 +141,8 @@ void setup() {
 
 /*  Main loop  */
 void loop() {
+
+  
     bool runOnce = false;
 
 #ifdef TEST
@@ -140,11 +150,32 @@ void loop() {
 #endif
     while(getClock(&x) <= DELTA_PROC) {
         if(!runOnce) {
-            for(int i = 0; i < sizeof(inPayload.data); i++) {
-                if(inPayload.data[i] == address) {
-                    digitalWrite(3, inPayload.data[i + 1] == 1 ? HIGH : LOW);
-                } 
+            if(address == SENDER_ADDRESS) { 
+                pinMode(SENDER_SENSOR_1, INPUT);
+                pinMode(SENDER_SENSOR_2, INPUT);
+                usercodeDataSize = 0;
+
+                // Do a true reading right after transmission
+                if(netStat.n == netStat.k) {
+                    usercodeData[1] = !digitalRead(SENDER_SENSOR_1);
+                    usercodeData[3] = !digitalRead(SENDER_SENSOR_2);
+                }
+                
+                usercodeData[usercodeDataSize++] = RECEIVER_1_ADDRESS;
+                usercodeData[usercodeDataSize++] |= !digitalRead(SENDER_SENSOR_1);
+    
+                usercodeData[usercodeDataSize++] = RECEIVER_2_ADDRESS;
+                usercodeData[usercodeDataSize++] |= !digitalRead(SENDER_SENSOR_2);
+            } else {
+                pinMode(RECEIVER_OUTPIN, OUTPUT);
+                for(int i = 0; i < sizeof(inPayload.data); i++) {
+                    if(inPayload.data[i] == address) {
+                        digitalWrite(RECEIVER_OUTPIN, inPayload.data[i + 1] == 1 ? HIGH : LOW);
+                    } 
+                }
+                usercodeDataSize = 0;
             }
+            
             runOnce = true;
         }
     }
@@ -152,7 +183,7 @@ void loop() {
 #ifdef TEST
     printTask("usercode", getClock(&y));
 #endif
-    nextSlot(); 
+    nextSlot();
 #ifdef DEBUG
     Serial.println(F("===================================="));
     if(0 == netStat.i) {
@@ -176,17 +207,9 @@ void loop() {
 #endif
         // Guard time
         delay(GUARD_TIME_BEFORE_TX);
-        if(address == 0xAD) { 
-            uint8_t data[PAYLOAD_MAX_SIZE - sizeof(payloadHead)];
-            uint8_t dataSize = 0;
-            
-            data[dataSize++] = 0x13;
-            data[dataSize++] = !digitalRead(2);
-
-            data[dataSize++] = 0x89;
-            data[dataSize++] = !digitalRead(3);
-            outPayloadSize = sizeof(payloadHead) + dataSize;
-            tx(data, dataSize);
+        if(usercodeDataSize > 0) {
+          outPayloadSize = sizeof(payloadHead) + usercodeDataSize;
+          tx(usercodeData, usercodeDataSize);
         } else {
             outPayloadSize = sizeof(payloadHead);
             tx(NULL, 0);
@@ -200,12 +223,16 @@ void loop() {
    resetClock(&y);
 #endif
         // Receive!
-        foundNetwork = false;
+        bool foundNetwork = false;
 #ifdef DEBUG
         Serial.println("Rx");
-#endif
         long t_0 = millis();
+#endif
         while(getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
+#ifdef DO_SENSOR_POOLING
+            if(address == SENDER_ADDRESS)
+                userSensorPool();
+#endif
             if(rx()){
 #ifdef DEBUG
                 Serial.print(F("Actual time taken to recive: "));
@@ -337,11 +364,11 @@ void nextSlot(){
 }
 
 void reSync(){
-#ifdef DEBUG
-    if(inPayload.header.slotCount == 0)
-        Serial.println("Something went wrong...");
-#endif
     if(inPayload.header.slotCount > netStat.n) {
+#ifdef DEBUG
+        Serial.print(F("New device joined with addr: "));
+        Serial.println(inPayload.header.address);
+#endif
       outPayload.header.slotCount = inPayload.header.slotCount;
       netStat.n = inPayload.header.slotCount;
     }
@@ -361,3 +388,12 @@ void printTask(const char* mode, unsigned long time){
     Serial.println(time);
 }
 #endif
+
+#ifdef DO_SENSOR_POOLING
+void userSensorPool() {
+    usercodeData[1] |= !digitalRead(SENDER_SENSOR_1);
+    
+    usercodeData[3] |= !digitalRead(SENDER_SENSOR_2);
+}
+#endif
+
