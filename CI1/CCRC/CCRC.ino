@@ -94,21 +94,22 @@ void setup() {
 
     while(getClock(&x) <= INIT_WAIT && !foundNetwork) {
         if(rx()) {
-            digitalWrite(13, HIGH);
-            // FOUND NETWORK
-#ifdef DEBUG
-            Serial.println(F("Found Network, joining!!"));
-#endif
-            netStat.i = inPayload.header.currentSlot;
-            netStat.n = inPayload.header.slotCount + 1;
-            netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
-            setPayloadHead(&outPayload, netStat.i,  netStat.n, address);
             foundNetwork = true;
         }
     }
 
-    if(!foundNetwork) {
-        // Create new network
+    if(foundNetwork) {
+#ifdef DEBUG
+        digitalWrite(13, HIGH);
+        Serial.println(F("Found Network, joining!!"));
+#endif
+        netStat.i = inPayload.header.currentSlot;
+        netStat.n = inPayload.header.slotCount + 1;
+        netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
+        setPayloadHead(&outPayload, netStat.i,  netStat.n, address);
+        waitForNextTimeslot(inPayloadSize); // This also resets x
+    } else {
+                // Create new network
         netStat.n = 2;
         netStat.k = 0;
         netStat.i = 1; // Such that when we loop it increments to
@@ -120,8 +121,6 @@ void setup() {
 #ifdef DEBUG
         Serial.println("Found no network, starting own");
 #endif
-    } else {
-       waitForNextTimeslot(inPayloadSize);
     }
 
 #ifdef DEBUG
