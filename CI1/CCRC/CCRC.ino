@@ -62,9 +62,12 @@ unsigned long y = 0;
 
 /*  Setup function  */
 void setup() {
+#if (defined DEBUG) || (defined TEST)
     // DELAY START
     delay(5000);
     Serial.begin(9600);
+    pinMode(13, OUTPUT);
+#endif
     // Init radiohead
     if (!rh.init()) {
 #ifdef DEBUG
@@ -72,8 +75,6 @@ void setup() {
 #endif
         while(true){}
     }
-
-    pinMode(13, OUTPUT);
 
     outPayload.data[1] = (uint8_t) '\0';
     // Get the address of the device
@@ -92,22 +93,46 @@ void setup() {
 #endif
     bool foundNetwork = false;
 
-    while(getClock(&x) <= INIT_WAIT && !foundNetwork) {
+    while(getClock(&x) <= INIT_WAIT) {
         if(rx()) {
+            protocolMaintance(inPayload.header.currentSlot, inPayload.header.slotCount, inPayloadSize);
             foundNetwork = true;
+            waitForNextTimeslot(inPayloadSize);
+            break;
         }
     }
 
     if(foundNetwork) {
+      netStat.i = (netStat.i%netStat.n)+1;
+      while(netStat.i != netStat.n){
+        while(getClock(&x) <= DELTA_COM){
+          if(rx()){
+            protocolMaintance(inPayload.header.currentSlot, inPayload.header.slotCount, inPayloadSize);
+            break;
+          }
+        }
+        waitForNextTimeslot(inPayloadSize);
+        netStat.i = (netStat.i%netStat.n)+1;
+      }
+      while(getClock(&x) <= DELTA_PROC){
+      }
+
+      netStat.k = netStat.n;
+      netStat.n = netStat.n + 1;
+      outPayloadSize = sizeof(payloadHead);
+      tx(NULL, 0);
+      waitForNextTimeslot(outPayloadSize);
+/*
 #ifdef DEBUG
         digitalWrite(13, HIGH);
         Serial.println(F("Found Network, joining!!"));
 #endif
+        protocolMaintance(inPayload.header.currentSlot, inPayload.header.slotCount, inPayloadSize);
         netStat.i = inPayload.header.currentSlot;
         netStat.n = inPayload.header.slotCount + 1;
         netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
         setPayloadHead(&outPayload, netStat.i,  netStat.n, address);
-        waitForNextTimeslot(inPayloadSize); // This also resets x
+        waitForNextTimeslot(inPayloadSize); // This also resets x*/
     } else {
                 // Create new network
         netStat.n = 2;
@@ -224,6 +249,17 @@ void loop() {
             resetClock(&x);
         }
     }
+}
+
+void protocolMaintance(int i, int n, int len){
+  if(netStat.n < n){
+    netStat.n = n;
+  }
+  netStat.i = i;
+  int transDur = 66 * (len * 6);
+  int transTime = x - transDur;
+  int slotTime = transTime - DELTA_PROC;
+  x = x - slotTime;
 }
 
 void waitForNextTimeslot(uint32_t payloadSize) {
