@@ -103,7 +103,7 @@ void setup() {
     }
 
     if(foundNetwork) {
-      netStat.i = (netStat.i%netStat.n)+1;
+      nextSlot();
       while(netStat.i != netStat.n){
         while(getClock(&x) <= DELTA_COM){
           if(rx()){
