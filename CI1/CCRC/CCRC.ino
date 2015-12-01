@@ -122,17 +122,6 @@ void setup() {
       outPayloadSize = sizeof(payloadHead);
       tx(NULL, 0);
       waitForNextTimeslot(outPayloadSize);
-/*
-#ifdef DEBUG
-        digitalWrite(13, HIGH);
-        Serial.println(F("Found Network, joining!!"));
-#endif
-        protocolMaintance(inPayload.header.currentSlot, inPayload.header.slotCount, inPayloadSize);
-        netStat.i = inPayload.header.currentSlot;
-        netStat.n = inPayload.header.slotCount + 1;
-        netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
-        setPayloadHead(&outPayload, netStat.i,  netStat.n, address);
-        waitForNextTimeslot(inPayloadSize); // This also resets x*/
     } else {
                 // Create new network
         netStat.n = 2;
@@ -256,7 +245,7 @@ void protocolMaintance(int i, int n, int len){
     netStat.n = n;
   }
   netStat.i = i;
-  int transDur = 66 * (len * 6);
+  int transDur = 66 + (len * 6);
   int transTime = x - transDur;
   int slotTime = transTime - DELTA_PROC;
   x = x - slotTime;
