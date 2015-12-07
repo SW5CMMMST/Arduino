@@ -390,8 +390,13 @@ void printTask(const char* mode, unsigned long time){
 }
 #endif
 
+#define DOUBLE_CLICK_TIMEOUT 500
+uint32_t clickClock[2];
+int buttonStatePosition[2] { 0, 0 };
+
 /* Place user code which should be executed once pr. timeslot */
 void userCodeRunonce() {
+    /* If you are the unit which transmits to other units. */
     if(address == SENDER_ADDRESS) {
         pinMode(SENDER_SENSOR_1, INPUT_PULLUP);
         pinMode(SENDER_SENSOR_2, INPUT_PULLUP);
@@ -403,13 +408,22 @@ void userCodeRunonce() {
         if(netStat.i == netStat.k) {
             usercodeData[1] = LOW;
             usercodeData[3] = LOW;
+            buttonStatePosition[0] = 0;
+            buttonStatePosition[1] = 0;
+            resetClock(&clickClock[0]);
+            resetClock(&clickClock[1]);
         }
 
         userSensorPool();
     } else {
         pinMode(RECEIVER_OUTPIN, OUTPUT);
-        for(int i = 0; i < sizeof(inPayload.data); i++) {
+        for(int i = 0; i < sizeof(inPayload.data); i += 2) {
             if(inPayload.data[i] == address) {
+                if(inPayload.data[i + 1] > 1) {
+                  /* special stuff starts here */
+                  
+                }
+
                 digitalWrite(RECEIVER_OUTPIN, inPayload.data[i + 1] == 1 ? HIGH : LOW);
             }
         }
@@ -419,17 +433,89 @@ void userCodeRunonce() {
 
 /* Place user code which should be executed repeatly here */
 void userCodeRepeat() {
-    // Intentionally left blank
+  userSensorPool();
 }
 
 /* Place user code which should be executed repeatly here concurrently while reciving */
 void userSensorPool() {
-    if(digitalRead(SENDER_SENSOR_1) == LOW) {
+    if(digitalRead(SENDER_SENSOR_1) == LOW && buttonStatePosition[0] < 5) {
         usercodeData[1] = HIGH;
     }
 
-    if(digitalRead(SENDER_SENSOR_2) == LOW) {
+    if(digitalRead(SENDER_SENSOR_2) == LOW && buttonStatePosition[1] < 5) {
         usercodeData[3] = HIGH;
     }
+
+    if(getClock(&clickClock[0]) > DOUBLE_CLICK_TIMEOUT && buttonStatePosition[0] < 5) {
+        buttonStatePosition[0] = 0;
+    }
+
+    if(getClock(&clickClock[1]) > DOUBLE_CLICK_TIMEOUT && buttonStatePosition[1] < 5) {
+        buttonStatePosition[1] = 0;
+    }
+
+    /* Keep in mind that the digitalReads are reversed ... */
+    switch (buttonStatePosition[0]) {
+        case 0:
+          if(digitalRead(SENDER_SENSOR_1) == HIGH)
+            buttonStatePosition[0]++;
+          break;
+        case 1:
+          if(digitalRead(SENDER_SENSOR_1) == LOW) {
+            buttonStatePosition[0]++;
+            resetClock(&clickClock[0]);
+          }            
+          break;
+        case 2:
+          if(digitalRead(SENDER_SENSOR_1) == HIGH)
+            buttonStatePosition[0]++;
+          break;
+        case 3:
+          if(digitalRead(SENDER_SENSOR_1) == LOW)
+            buttonStatePosition[0]++;
+          break;
+        case 4:
+          if(digitalRead(SENDER_SENSOR_1) == HIGH) {
+            buttonStatePosition[0]++;
+            usercodeData[1] = 2;
+          }            
+          break;
+        default:
+            usercodeData[1] = 2;
+          break;
+    }
+
+    /* Keep in mind that the digitalReads are reversed ... */
+    switch (buttonStatePosition[1]) {
+        case 0:
+          if(digitalRead(SENDER_SENSOR_1) == HIGH)
+            buttonStatePosition[1]++;
+          break;
+        case 1:
+          if(digitalRead(SENDER_SENSOR_1) == LOW) {
+            buttonStatePosition[1]++;
+            resetClock(&clickClock[1]);
+          }            
+          break;
+        case 2:
+          if(digitalRead(SENDER_SENSOR_1) == HIGH)
+            buttonStatePosition[1]++;
+          break;
+        case 3:
+          if(digitalRead(SENDER_SENSOR_1) == LOW)
+            buttonStatePosition[1]++;
+          break;
+        case 4:
+          if(digitalRead(SENDER_SENSOR_1) == HIGH) {
+            buttonStatePosition[1]++;
+            usercodeData[3] = 2;
+          }            
+          break;
+        default:
+            usercodeData[3] = 2;
+          break;
+    }
+
+
 }
 
