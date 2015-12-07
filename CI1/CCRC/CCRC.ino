@@ -478,6 +478,7 @@ void userSensorPool() {
           if(digitalRead(SENDER_SENSOR_1) == HIGH) {
             buttonStatePosition[0]++;
             usercodeData[1] = 2;
+            digitalWrite(13, HIGH);
           }            
           break;
         default:
@@ -509,6 +510,7 @@ void userSensorPool() {
           if(digitalRead(SENDER_SENSOR_1) == HIGH) {
             buttonStatePosition[1]++;
             usercodeData[3] = 2;
+            digitalWrite(13, HIGH);
           }            
           break;
         default:
