@@ -70,7 +70,7 @@ void checkForDoubleClick(struct doubleClickState * doubleClick) {
       (*doubleClick).doubleClickTimeout = millis();
     }
 
-    /* Has been turned off and on again */
+    /* Double click complete */
     if ((*doubleClick).buttonState == 4) {
       Serial.print("Button[");
       Serial.print((*doubleClick).sensor);

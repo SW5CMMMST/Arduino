@@ -26,6 +26,22 @@
 #define SENDER_SENSOR_2 3
 #define RECEIVER_2_ADDRESS 0x89
 
+#define DOUBLE_CLICK_MAX_TIME 750
+#define DEBOUNCE_TIME 50
+
+struct doubleClickState {
+  int previousButtonState,
+      buttonState,
+      upDown,
+      sensor;
+  uint32_t doubleClickTimeout,
+           upDownTime;
+};
+
+struct doubleClickState dc1 = { -1, 0, HIGH, SENDER_SENSOR_1, 0, 0 };
+struct doubleClickState dc2 = { -1, 0, HIGH, SENDER_SENSOR_2, 0, 0 };
+/* END USER CODE */
+
 /*  Data structures  */
 struct payloadHead {
     uint8_t currentSlot;
@@ -51,7 +67,7 @@ struct payload inPayload;
 uint8_t inPayloadSize = 0;
 struct payload outPayload;
 uint8_t outPayloadSize = 0;
-unsigned long x = 0;
+uint32_t x = 0;
 struct networkStatus netStat;
 uint8_t usercodeData[13];
 uint8_t usercodeDataSize = 0;
@@ -102,20 +118,27 @@ void setup() {
         }
     }
 
+    resetClock(&x);
     if(foundNetwork) {
       nextSlot();
-      while(netStat.i != netStat.n){
+      while(netStat.i != netStat.n - 1){
         while(getClock(&x) <= DELTA_COM){
           if(rx()){
+            reSync();
             protocolMaintance(inPayload.header.currentSlot, inPayload.header.slotCount, inPayloadSize);
             break;
           }
         }
+        while(getClock(&x) <= DELTA_PROC){
+        }
+        Serial.println(F("Fak"));
+        Serial.println(netStat.i);
+        Serial.println(netStat.n);
+        
         waitForNextTimeslot(inPayloadSize);
-        netStat.i = (netStat.i%netStat.n)+1;
+        nextSlot();
       }
-      while(getClock(&x) <= DELTA_PROC){
-      }
+      
 
       netStat.k = netStat.n;
       netStat.n = netStat.n + 1;
@@ -438,6 +461,7 @@ void userCodeRepeat() {
 
 /* Place user code which should be executed repeatly here concurrently while reciving */
 void userSensorPool() {
+    
     if(digitalRead(SENDER_SENSOR_1) == LOW && buttonStatePosition[0] < 5) {
         usercodeData[1] = HIGH;
     }
@@ -445,79 +469,58 @@ void userSensorPool() {
     if(digitalRead(SENDER_SENSOR_2) == LOW && buttonStatePosition[1] < 5) {
         usercodeData[3] = HIGH;
     }
-
-    if(getClock(&clickClock[0]) > DOUBLE_CLICK_TIMEOUT && buttonStatePosition[0] < 5) {
-        buttonStatePosition[0] = 0;
-    }
-
-    if(getClock(&clickClock[1]) > DOUBLE_CLICK_TIMEOUT && buttonStatePosition[1] < 5) {
-        buttonStatePosition[1] = 0;
-    }
-
-    /* Keep in mind that the digitalReads are reversed ... */
-    switch (buttonStatePosition[0]) {
-        case 0:
-          if(digitalRead(SENDER_SENSOR_1) == HIGH)
-            buttonStatePosition[0]++;
-          break;
-        case 1:
-          if(digitalRead(SENDER_SENSOR_1) == LOW) {
-            buttonStatePosition[0]++;
-            resetClock(&clickClock[0]);
-          }            
-          break;
-        case 2:
-          if(digitalRead(SENDER_SENSOR_1) == HIGH)
-            buttonStatePosition[0]++;
-          break;
-        case 3:
-          if(digitalRead(SENDER_SENSOR_1) == LOW)
-            buttonStatePosition[0]++;
-          break;
-        case 4:
-          if(digitalRead(SENDER_SENSOR_1) == HIGH) {
-            buttonStatePosition[0]++;
-            usercodeData[1] = 2;
-            digitalWrite(13, HIGH);
-          }            
-          break;
-        default:
-            usercodeData[1] = 2;
-          break;
-    }
-
-    /* Keep in mind that the digitalReads are reversed ... */
-    switch (buttonStatePosition[1]) {
-        case 0:
-          if(digitalRead(SENDER_SENSOR_1) == HIGH)
-            buttonStatePosition[1]++;
-          break;
-        case 1:
-          if(digitalRead(SENDER_SENSOR_1) == LOW) {
-            buttonStatePosition[1]++;
-            resetClock(&clickClock[1]);
-          }            
-          break;
-        case 2:
-          if(digitalRead(SENDER_SENSOR_1) == HIGH)
-            buttonStatePosition[1]++;
-          break;
-        case 3:
-          if(digitalRead(SENDER_SENSOR_1) == LOW)
-            buttonStatePosition[1]++;
-          break;
-        case 4:
-          if(digitalRead(SENDER_SENSOR_1) == HIGH) {
-            buttonStatePosition[1]++;
-            usercodeData[3] = 2;
-            digitalWrite(13, HIGH);
-          }            
-          break;
-        default:
-            usercodeData[3] = 2;
-          break;
-    }
-
-
+    /*
+    */
+    //checkForDoubleClick(&dc1);
+    //checkForDoubleClick(&dc2);
 }
+void checkForDoubleClick(struct doubleClickState * doubleClick) {
+  if ((*doubleClick).previousButtonState != (*doubleClick).buttonState) {
+    (*doubleClick).previousButtonState = (*doubleClick).buttonState;
+    Serial.print("Button[");
+    Serial.print((*doubleClick).sensor);
+    Serial.print("] is now: ");
+    Serial.println((*doubleClick).buttonState);
+  }
 
+  /* Beck if doubleclick time was exceded  */
+  if ((*doubleClick).buttonState > 1 && (millis() - (*doubleClick).doubleClickTimeout) > DOUBLE_CLICK_MAX_TIME) {
+    Serial.print("Button[");
+    Serial.print((*doubleClick).sensor);
+    Serial.println("] double click was too slow!");
+    (*doubleClick).buttonState = 0;
+    (*doubleClick).doubleClickTimeout = millis();
+  }
+
+  /* Button state chanced! with debounce */
+  int temp = digitalRead((*doubleClick).sensor);
+  if (temp != (*doubleClick).upDown && (millis() - (*doubleClick).upDownTime) > DEBOUNCE_TIME) {
+    (*doubleClick).upDown = temp;
+    (*doubleClick).upDownTime = millis();
+    //Serial.println((*doubleClick).upDown ? "NOT PRESSED" : "PRESSED" );
+
+    ((*doubleClick).buttonState)++;
+
+    /* Handles edge case, with invalid state */
+    if ((*doubleClick).upDown == HIGH && (*doubleClick).buttonState % 2 == 1)
+      (*doubleClick).buttonState = 0;
+
+    /* Handles edge case where 2nd button click is held down for too long */
+    if ((*doubleClick).upDown == LOW && (*doubleClick).buttonState % 2 == 0)
+      (*doubleClick).buttonState = 0;
+
+    /* First click is done, start timeout counter */
+    if ((*doubleClick).buttonState == 1) {
+      (*doubleClick).doubleClickTimeout = millis();
+    }
+
+    /* Double click complete */
+    if ((*doubleClick).buttonState == 4) {
+      Serial.print("Button[");
+      Serial.print((*doubleClick).sensor);
+      Serial.println("] double clicked!");
+      usercodeData[1] = HIGH;
+      (*doubleClick).buttonState = 0;
+    }
+  }
+}
