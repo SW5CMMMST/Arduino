@@ -36,11 +36,12 @@ struct payloadHead {
   uint8_t currentSlot;
   uint8_t slotCount;
   uint8_t address;
+  uint8_t mode;
 };
 
 struct payload {
   struct payloadHead header;
-  uint8_t data[13]; // So total size is 16
+  uint8_t data[PAYLOAD_MAX_SIZE - sizeof(payloadHead)]; // So total size is 16
 };
 
 struct networkStatus {
@@ -48,6 +49,8 @@ struct networkStatus {
   uint8_t k; // the timeslot of this device
   uint8_t i; // the timeslot currently in progress
 };
+
+typedef enum { NORMAL = 1, JOIN = 11, VERIFY = 22 } mode;
 
 /*  Global Variables  */
 RH_ASK rh;
@@ -58,7 +61,7 @@ struct payload outPayload;
 uint8_t outPayloadSize = 0;
 uint32_t x = 0;
 struct networkStatus netStat;
-uint8_t usercodeData[13];
+uint8_t usercodeData[PAYLOAD_MAX_SIZE - sizeof(payloadHead)];
 uint8_t usercodeDataSize = 0;
 
 #ifdef TEST
@@ -296,6 +299,7 @@ void readsPayloadFromBuffer(struct payload * payloadDest, uint8_t* payloadBuffer
   payloadDest->header.currentSlot = payloadBuffer[0];
   payloadDest->header.slotCount = payloadBuffer[1];
   payloadDest->header.address = payloadBuffer[2];
+  payloadDest->header.mode = payloadBuffer[3];
   for (int32_t i = 0; i < plSize - sizeof(payloadHead); i++) {
     payloadDest->data[i] = payloadBuffer[sizeof(payloadHead) + i];
   }
@@ -351,15 +355,15 @@ void tx(uint8_t * data, uint8_t dataSize) {
   rh.waitPacketSent();
 }
 
+
 uint32_t getClock(uint32_t * x_0) {
+  // This also handles uint32_t overflow, which happnes after 2^32 milliseconds approx 49 days.
+  // Because:        (uint32_t)((uint32_t) 4294967297 - (uint32_t) 4294967290 ) == 7 // UINT32_MAX + 2
+  // Is the same as: (uint32_t)((uint32_t)          1 - (uint32_t) 4294967290 ) == 7
   return millis() - *x_0;
 }
 
 void resetClock(uint32_t * x_0) {
-#ifdef DEBUG
-  if (millis() < *x_0)
-    Serial.println(F("Timer overflowed ..."));
-#endif
   *x_0 = millis();
 }
 
