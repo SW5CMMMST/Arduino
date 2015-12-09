@@ -56,13 +56,13 @@ struct payload inPayload;
 uint8_t inPayloadSize = 0;
 struct payload outPayload;
 uint8_t outPayloadSize = 0;
-unsigned long x = 0;
+uint32_t x = 0;
 struct networkStatus netStat;
 uint8_t usercodeData[13];
 uint8_t usercodeDataSize = 0;
 
 #ifdef TEST
-unsigned long y = 0;
+uint32_t y = 0;
 #endif
 
 /*  Setup function  */
@@ -252,7 +252,7 @@ void loop() {
 }
 
 void waitForNextTimeslot(uint32_t payloadSize) {
-  int sentTime = sentTimeCalculator(payloadSize);
+  int32_t sentTime = sentTimeCalculator(payloadSize);
 
   // Will be from 200 -  84 - 30 = 86
   //           to 200 - 162 - 30 = 8
@@ -285,8 +285,8 @@ uint32_t sentTimeCalculator(uint32_t payloadSize) {
    */
 
   // inPayloadSize is always in the range [3;16]
-  // So sentTime is: [83,8129; 161,9416] with floats and [84;162] with integers
-  // Rounding to integers, accurate within +-0.2
+  // So sentTime is: [83,8129; 161,9416] with floats and [84;162] with int32_tegers
+  // Rounding to int32_tegers, accurate within +-0.2
   uint32_t sentTime = 66 + (6 * payloadSize);
   return sentTime;
 }
@@ -296,7 +296,7 @@ void readsPayloadFromBuffer(struct payload * payloadDest, uint8_t* payloadBuffer
   payloadDest->header.currentSlot = payloadBuffer[0];
   payloadDest->header.slotCount = payloadBuffer[1];
   payloadDest->header.address = payloadBuffer[2];
-  for (int i = 0; i < plSize - sizeof(payloadHead); i++) {
+  for (int32_t i = 0; i < plSize - sizeof(payloadHead); i++) {
     payloadDest->data[i] = payloadBuffer[sizeof(payloadHead) + i];
   }
 }
@@ -351,11 +351,11 @@ void tx(uint8_t * data, uint8_t dataSize) {
   rh.waitPacketSent();
 }
 
-unsigned long getClock(unsigned long * x_0) {
+uint32_t getClock(uint32_t * x_0) {
   return millis() - *x_0;
 }
 
-void resetClock(unsigned long * x_0) {
+void resetClock(uint32_t * x_0) {
 #ifdef DEBUG
   if (millis() < *x_0)
     Serial.println(F("Timer overflowed ..."));
@@ -393,7 +393,7 @@ void reSync() {
 }
 
 #ifdef TEST
-void printTask(const char* mode, unsigned long time) {
+void printTask(const char* mode, uint32_t time) {
   Serial.print(mode);
   Serial.print("\t");
   Serial.println(time);
