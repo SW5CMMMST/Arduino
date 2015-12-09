@@ -8,8 +8,8 @@
 #include <Addr.h>
 
 /*  Symbolic constants  */
-#define DELTA_COM 200
-#define DELTA_PROC 50
+#define DELTA_COM 400
+#define DELTA_PROC 100
 #define TIMESLOT_LEN (DELTA_COM + DELTA_PROC)
 #define INIT_WAIT (5 * TIMESLOT_LEN)
 #define PAYLOAD_MAX_SIZE 16
