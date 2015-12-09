@@ -8,8 +8,13 @@
 #include <Addr.h>
 
 /*  Symbolic constants  */
+#ifdef DEBUG
 #define DELTA_COM 400
 #define DELTA_PROC 100
+#else
+#define DELTA_COM 200
+#define DELTA_PROC 50
+#endif
 #define TIMESLOT_LEN (DELTA_COM + DELTA_PROC)
 #define INIT_WAIT (5 * TIMESLOT_LEN)
 #define PAYLOAD_MAX_SIZE 16
@@ -374,7 +379,7 @@ struct doubleClickState {
            upDownTime;
 };
 
-#define DOUBLE_CLICK_MAX_TIME 750
+#define DOUBLE_CLICK_MAX_TIME 1250
 #define DEBOUNCE_TIME 25
 
 #define USER_DEBUG
@@ -394,6 +399,8 @@ void userCodeRunonce() {
 
         usercodeData[1] = outState[SENDER_SENSOR_1];
         usercodeData[3] = outState[SENDER_SENSOR_2];
+
+        pinMode(5, OUTPUT);
 
         userSensorPool();
     } else {
