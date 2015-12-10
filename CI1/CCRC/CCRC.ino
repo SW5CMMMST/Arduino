@@ -1,5 +1,6 @@
 /*  Mode defines  */
 #define DEBUG
+#define MULTICONNECT
 
 /*  Library includes  */
 #include <RH_ASK.h>
@@ -50,7 +51,7 @@ struct networkStatus {
   uint8_t i; // the timeslot currently in progress
 };
 
-typedef enum { NORMAL = 1, JOIN = 11, VERIFY = 22 } mode;
+typedef enum { NORMAL = 1, JOIN = 2, VERIFY = 3 } mode;
 
 /*  Global Variables  */
 RH_ASK rh;
@@ -64,18 +65,25 @@ struct networkStatus netStat;
 uint8_t usercodeData[PAYLOAD_MAX_SIZE - sizeof(payloadHead)];
 uint8_t usercodeDataSize = 0;
 
+bool verifyNext = false;
+uint8_t addressToVerify = 0x0;
+
 #ifdef TEST
 uint32_t y = 0;
 #endif
 
 /*  Setup function  */
 void setup() {
-  // DELAY START
 #ifdef DEBUG
-  delay(5000);
-#endif
   Serial.begin(9600);
-  // Init radiohead
+  Serial.println(F("Device started!!"));
+  for (int i = 0; i < 20; i++) {
+    Serial.print(F("."));
+    delay(250);
+  }
+  Serial.println("");
+#endif
+
   if (!rh.init()) {
 #ifdef DEBUG
     Serial.println(F("Init failed!"));
@@ -110,41 +118,19 @@ void setup() {
   }
 
   if (foundNetwork) {
-#ifdef DEBUG
-    digitalWrite(13, HIGH);
-    Serial.println(F("Found Network, joining!!"));
+
+    
+#ifdef MULTICONNECT
+    connectToNetworkMultiConnect();
+#else
+    connectToNetwork();
 #endif
-    netStat.i = inPayload.header.currentSlot;
-    netStat.n = inPayload.header.slotCount + 1;
-    netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
-    setPayloadHead(&outPayload, netStat.i,  netStat.n, address);
-
-    while (netStat.i != netStat.n - 1) {
-      nextSlot();
-      while (getClock(&x) <= TIMESLOT_LEN) {
-        if (rx()) {
-          // reSync();
-          foundNetwork = true;
-        }
-      }
-      waitForNextTimeslot(inPayloadSize); // Resets x
-    }
-
-    resetClock(&x);
-    while (getClock(&x) <= DELTA_PROC); // Wait for user-code
-    delay(GUARD_TIME_BEFORE_TX);
-    outPayloadSize = sizeof(payloadHead);
-    tx(NULL, usercodeDataSize);
-
   } else {
     // Create new network
     netStat.n = 2;
     netStat.k = 0;
     netStat.i = 1; // Such that when we loop it increments to
-    outPayload.header.currentSlot = 0;
-    outPayload.header.slotCount = 2;
-    outPayload.header.address = address;
-
+    setPayloadHead(&outPayload, netStat.i, netStat.n, address, NORMAL, sizeof(payloadHead));
     resetClock(&x);
 #ifdef DEBUG
     Serial.println("Found no network, starting own");
@@ -163,6 +149,116 @@ void setup() {
 #ifdef TEST
   printTask("connecting", getClock(&y));
 #endif
+
+}
+
+void connectToNetworkMultiConnect() {
+  netStat.i = inPayload.header.currentSlot;
+  netStat.n = inPayload.header.slotCount; // Don't increment n yet. 
+  netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
+  setPayloadHead(&outPayload, netStat.i, netStat.n, address, JOIN, sizeof(payloadHead));
+
+  /* Wait for emptyslot */
+
+  bool foundNetwork = false;
+  nextSlot();
+  while (netStat.i != netStat.n - 1) {
+    while (getClock(&x) <= DELTA_PROC); // Wait for user-code
+    nextSlot();
+    foundNetwork = false;
+    while (getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
+      if (rx()) {
+        foundNetwork = true;
+      }
+    }
+    if(foundNetwork) {
+      waitForNextTimeslot(inPayloadSize); // Resets x
+    } else {
+      resetClock(&x);
+    }
+  }
+  
+  /* Annouce yourself */
+  while (getClock(&x) <= DELTA_PROC);
+#ifdef DEBUG
+  Serial.println(F("Announcing self"));
+#endif
+  delay(GUARD_TIME_BEFORE_TX);
+  outPayloadSize = sizeof(payloadHead);
+  tx(NULL, 0);
+  waitForNextTimeslot(outPayloadSize);
+
+  nextSlot();
+  /* Wait for emptyslot while verifying connection */
+  bool verified = false;
+  while (netStat.i != netStat.n - 1) {
+    while (getClock(&x) <= DELTA_PROC); // Wait for user-code
+    nextSlot();
+    foundNetwork = false;
+    while (getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
+      if (rx()) {
+        if (inPayload.header.mode == VERIFY) {
+          if (inPayload.data[inPayloadSize - sizeof(payloadHead) - 1] == address) {
+            verified = true;
+#ifdef DEBUG
+            Serial.print(F("Join verified by device"));
+            Serial.println(inPayload.header.address);
+#endif
+          }
+        }
+        foundNetwork = true;
+      }
+    }
+    if(foundNetwork) {
+      waitForNextTimeslot(inPayloadSize); // Resets x
+    } else {
+      resetClock(&x);
+    }
+  }
+
+  /* If verified join, else retry */
+  if (verified) {
+    /* Increment n */
+    netStat.n = netStat.n + 1;
+    outPayload.header.slotCount = netStat.n; 
+    setPayloadHead(&outPayload, netStat.i,  netStat.n, address, JOIN, sizeof(payloadHead));
+    return;
+  } else {
+    /* exp backoff */
+
+    /* retry */
+    Serial.println(F("Seppuku"));
+    while(true);
+  }
+}
+
+void connectToNetwork() {
+  netStat.i = inPayload.header.currentSlot;
+  netStat.n = inPayload.header.slotCount + 1;
+  netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
+  setPayloadHead(&outPayload, netStat.i,  netStat.n, address, JOIN, sizeof(payloadHead));
+#ifdef DEBUG
+  digitalWrite(13, HIGH);
+  Serial.println(F("Found Network, joining!!"));
+#endif
+
+  bool foundNetwork = false;
+  while (netStat.i != netStat.n - 1) {
+    nextSlot();
+    while (getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
+      if (rx()) {
+        foundNetwork = true;
+      }
+    }
+    waitForNextTimeslot(inPayloadSize); // Resets x
+  }
+
+  resetClock(&x);
+  while (getClock(&x) <= DELTA_PROC); // Wait for user-code
+  delay(GUARD_TIME_BEFORE_TX);
+  outPayloadSize = sizeof(payloadHead);
+  tx(NULL, usercodeDataSize);
+  waitForNextTimeslot(outPayloadSize);
 
 }
 
@@ -202,8 +298,26 @@ void loop() {
 #ifdef DEBUG
     Serial.println("Tx");
 #endif
+
+#ifdef MULTICONNECT
+    if (verifyNext) {
+      outPayload.header.mode = VERIFY;
+
+      /* find last unused byte in payload and put address there, set size again */
+      if (usercodeDataSize == PAYLOAD_MAX_SIZE - sizeof(payloadHead)) {
+#ifdef DEBUG
+        Serial.println(F("All space for usercode is used, removing last byte to fit verify"));
+#endif
+        usercodeData[PAYLOAD_MAX_SIZE - sizeof(payloadHead) - 1] = addressToVerify;
+      } else {
+        /* Put address after last byte of usercodeData */
+        usercodeData[usercodeDataSize] = addressToVerify;
+        usercodeDataSize++;
+      }
+    }
+#endif
     // Guard time
-    delay(GUARD_TIME_BEFORE_TX);
+    while (getClock(&x) <= DELTA_PROC + GUARD_TIME_BEFORE_TX);
     if (usercodeDataSize > 0) {
       outPayloadSize = sizeof(payloadHead) + usercodeDataSize;
       tx(usercodeData, usercodeDataSize);
@@ -211,6 +325,13 @@ void loop() {
       outPayloadSize = sizeof(payloadHead);
       tx(NULL, 0);
     }
+#ifdef MULTICONNECT
+    if (verifyNext) {
+      usercodeDataSize--;
+      outPayload.header.mode = NORMAL;
+      verifyNext = false;
+    }
+#endif
 #ifdef TEST
     printTask("Tx", getClock(&y));
 #endif
@@ -235,7 +356,7 @@ void loop() {
         Serial.print(F("Actual time taken to recive: "));
         Serial.println(millis() - t_0);
 #endif
-        reSync();
+        ProtocolMaintenance();
         foundNetwork = true;
       }
     }
@@ -305,20 +426,6 @@ void readsPayloadFromBuffer(struct payload * payloadDest, uint8_t* payloadBuffer
   }
 }
 
-#ifdef DEBUG
-void _printPayload(struct payload in) {
-  Serial.println(F("Payload:"));
-  Serial.print(F("\tcurrentSlot: "));
-  Serial.println(in.header.currentSlot);
-
-  Serial.print(F("\tslotCount: "));
-  Serial.println(in.header.slotCount);
-
-  Serial.print(F("\taddress: "));
-  Serial.println(in.header.address);
-}
-#endif
-
 bool rx() {
   uint8_t payloadBuffer[PAYLOAD_MAX_SIZE];
   memset(payloadBuffer, 'a', sizeof(payloadBuffer));
@@ -339,7 +446,8 @@ void tx(uint8_t * data, uint8_t dataSize) {
   memset(payloadBuffer, 'a', sizeof(payloadBuffer));
   payloadBuffer[0] = outPayload.header.currentSlot;
   payloadBuffer[1] = outPayload.header.slotCount;
-  payloadBuffer[2] = address;
+  payloadBuffer[2] = outPayload.header.address;
+  payloadBuffer[3] = outPayload.header.mode;
   for (int i = 0; i < dataSize; i++) {
     payloadBuffer[sizeof(payloadHead) + i] = data[i];
   }
@@ -367,18 +475,24 @@ void resetClock(uint32_t * x_0) {
   *x_0 = millis();
 }
 
-void setPayloadHead(struct payload * p, uint8_t curSlot, uint8_t slotCnt, uint8_t addr) {
+void setPayloadHead(struct payload * p, uint8_t curSlot, uint8_t slotCnt, uint8_t addr, uint8_t md, uint8_t sz) {
   p->header.currentSlot = curSlot;
   p->header.slotCount = slotCnt;
   p->header.address = addr;
+  p->header.mode = md;
+  usercodeDataSize = sz;
 }
 
 void nextSlot() {
   netStat.i = (netStat.i + 1) % netStat.n; // This is 0-indexed
   outPayload.header.currentSlot = netStat.i;
+#ifdef DEBUG
+  Serial.print(F("i = "));
+  Serial.println(netStat.i);
+#endif
 }
 
-void reSync() {
+void ProtocolMaintenance() {
   if (inPayload.header.slotCount > netStat.n) {
 #ifdef DEBUG
     Serial.print(F("New device joined with addr: "));
@@ -390,9 +504,14 @@ void reSync() {
 
   if (inPayload.header.currentSlot != netStat.i) {
 #ifdef DEBUG
-    Serial.println(F("Resynced!"));
+    Serial.println(F("ProtocolMaintenanceed!"));
 #endif
     netStat.i = inPayload.header.currentSlot;
+  }
+
+  if (inPayload.header.mode == JOIN) {
+    verifyNext = true;
+    addressToVerify = inPayload.header.address;
   }
 }
 
