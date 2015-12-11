@@ -10,16 +10,17 @@
 
 /*  Symbolic constants  */
 #ifdef DEBUG
-#define DELTA_COM 400
+#define DELTA_COM 500
 #define DELTA_PROC 100
 #else
 #define DELTA_COM 200
 #define DELTA_PROC 50
 #endif
 #define TIMESLOT_LEN (DELTA_COM + DELTA_PROC)
-#define INIT_WAIT (5 * TIMESLOT_LEN)
+#define INIT_WAIT (7 * TIMESLOT_LEN)
 #define PAYLOAD_MAX_SIZE 16
 #define GUARD_TIME_BEFORE_TX 30
+#define EXPONENTIALBACKOFFMAX 5
 
 /* User code constants */
 #define DO_SENSOR_POOLING
@@ -68,6 +69,8 @@ uint8_t usercodeDataSize = 0;
 bool verifyNext = false;
 uint8_t addressToVerify = 0x0;
 
+uint8_t exponentialBackoffC = 0;
+
 #ifdef TEST
 uint32_t y = 0;
 #endif
@@ -108,8 +111,14 @@ void setup() {
   Serial.println(address, HEX);
   resetClock(&y);
 #endif
+
+  StartUp();
+}
+
+void StartUp() {
   bool foundNetwork = false;
 
+  resetClock(&x);
   while (getClock(&x) <= INIT_WAIT && !foundNetwork) {
     if (rx()) {
       foundNetwork = true;
@@ -118,10 +127,13 @@ void setup() {
   }
 
   if (foundNetwork) {
-
-    
 #ifdef MULTICONNECT
-    connectToNetworkMultiConnect();
+    if (!connectToNetworkMultiConnect()) {
+#ifdef DEBUG
+      Serial.println(F("Starting over!!"));
+      StartUp();
+#endif
+    }
 #else
     connectToNetwork();
 #endif
@@ -152,9 +164,9 @@ void setup() {
 
 }
 
-void connectToNetworkMultiConnect() {
+bool connectToNetworkMultiConnect() {
   netStat.i = inPayload.header.currentSlot;
-  netStat.n = inPayload.header.slotCount; // Don't increment n yet. 
+  netStat.n = inPayload.header.slotCount; // Don't increment n yet.
   netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
   setPayloadHead(&outPayload, netStat.i, netStat.n, address, JOIN, sizeof(payloadHead));
 
@@ -169,26 +181,33 @@ void connectToNetworkMultiConnect() {
     while (getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
       if (rx()) {
         foundNetwork = true;
+        if (inPayload.header.mode != NORMAL ) {
+          nextSlot();
+          return false;
+        }
       }
     }
-    if(foundNetwork) {
+    if (foundNetwork) {
       waitForNextTimeslot(inPayloadSize); // Resets x
     } else {
       resetClock(&x);
     }
   }
-  
+
+
+
   /* Annouce yourself */
   while (getClock(&x) <= DELTA_PROC);
 #ifdef DEBUG
   Serial.println(F("Announcing self"));
 #endif
   delay(GUARD_TIME_BEFORE_TX);
-  outPayloadSize = sizeof(payloadHead);
+
+  setPayloadHead(&outPayload, netStat.i, netStat.n, address, JOIN, sizeof(payloadHead));
   tx(NULL, 0);
   waitForNextTimeslot(outPayloadSize);
 
-  nextSlot();
+  netStat.i = 0;
   /* Wait for emptyslot while verifying connection */
   bool verified = false;
   while (netStat.i != netStat.n - 1) {
@@ -209,7 +228,7 @@ void connectToNetworkMultiConnect() {
         foundNetwork = true;
       }
     }
-    if(foundNetwork) {
+    if (foundNetwork) {
       waitForNextTimeslot(inPayloadSize); // Resets x
     } else {
       resetClock(&x);
@@ -219,17 +238,68 @@ void connectToNetworkMultiConnect() {
   /* If verified join, else retry */
   if (verified) {
     /* Increment n */
+    netStat.k = netStat.n - 1;
     netStat.n = netStat.n + 1;
-    outPayload.header.slotCount = netStat.n; 
+    outPayload.header.slotCount = netStat.n;
     setPayloadHead(&outPayload, netStat.i,  netStat.n, address, JOIN, sizeof(payloadHead));
-    return;
+    return true;
   } else {
     /* exp backoff */
+    Serial.println(F("Exp-backoff"));
+    if (exponentialBackoffC < EXPONENTIALBACKOFFMAX) {
+      exponentialBackoffC++;
+    }
+
+    randomSeed(analogRead(0));
+    Serial.print(F("Chooseing random number in range [0, "));
+    Serial.print((1 << exponentialBackoffC) - 1);
+    Serial.print(F("] => "));
+    uint32_t framesToWaitBeforeRetrying = random(1 << exponentialBackoffC); // Random returnes 0 to argument - 1
+    Serial.println(framesToWaitBeforeRetrying);
+    
+
+    Serial.print(F("Waiting: "));
+    Serial.print((framesToWaitBeforeRetrying * TIMESLOT_LEN * netStat.n));
+    Serial.print(F("M$"));
+    delay(framesToWaitBeforeRetrying * TIMESLOT_LEN * netStat.n);
+  /*
+    netStat.i = 0;
+
+    for (int i = 0; i < framesToWaitBeforeRetrying; i++) {
+      Serial.print(F("In EXP Back-off nr. "));
+      Serial.print(i + 1);
+      Serial.print(F(" of "));
+      Serial.println(framesToWaitBeforeRetrying);
+      while (netStat.i != netStat.n - 1) {
+
+        foundNetwork = false;
+        while (getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
+          if (rx()) {
+            foundNetwork = true;
+          }
+        }
+        if (foundNetwork) {
+          waitForNextTimeslot(inPayloadSize); // Resets x
+        } else {
+          resetClock(&x);
+        }
+        nextSlot();
+      }
+      netStat.i = 0;
+
+    }
+
+    netStat.i = 0;
+
+    */
+
+    Serial.println(F("Leaving EXP BACKOFF"));
 
     /* retry */
-    Serial.println(F("Seppuku"));
-    while(true);
+    return false;
   }
+
+  return false;
 }
 
 void connectToNetwork() {
@@ -301,6 +371,10 @@ void loop() {
 
 #ifdef MULTICONNECT
     if (verifyNext) {
+#ifdef DEBUG
+      Serial.println(F("Verifying connection1!"));
+#endif
+
       outPayload.header.mode = VERIFY;
 
       /* find last unused byte in payload and put address there, set size again */
@@ -314,6 +388,8 @@ void loop() {
         usercodeData[usercodeDataSize] = addressToVerify;
         usercodeDataSize++;
       }
+    } else {
+      outPayload.header.mode = NORMAL;
     }
 #endif
     // Guard time
@@ -328,7 +404,7 @@ void loop() {
 #ifdef MULTICONNECT
     if (verifyNext) {
       usercodeDataSize--;
-      outPayload.header.mode = NORMAL;
+
       verifyNext = false;
     }
 #endif
