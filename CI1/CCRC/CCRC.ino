@@ -20,6 +20,7 @@
 #define INIT_WAIT (5 * TIMESLOT_LEN)
 #define PAYLOAD_MAX_SIZE 16
 #define GUARD_TIME_BEFORE_TX 30
+#define EXPONENTIALBACKOFFMAX 5
 
 /* User code constants */
 #define DO_SENSOR_POOLING
@@ -67,6 +68,7 @@ uint8_t usercodeDataSize = 0;
 
 bool verifyNext = false;
 uint8_t addressToVerify = 0x0;
+uint8_t exponentialBackoffC = 0;
 
 #ifdef TEST
 uint32_t y = 0;
@@ -102,14 +104,25 @@ void setup() {
   Serial.print(F("Address is 0x"));
   Serial.println(address, HEX);
 #endif
-  resetClock(&x);
 #ifdef TEST
   Serial.print("Device ");
   Serial.println(address, HEX);
   resetClock(&y);
 #endif
-  bool foundNetwork = false;
+  StartUp();
+  outPayload.header.mode = NORMAL;
+}
 
+void StartUp() {
+  netStat.i = 0;
+  netStat.k = 0;
+  netStat.n = 0;
+
+  setPayloadHead(&outPayload, netStat.i, netStat.n, 0, NORMAL, sizeof(payloadHead));
+  setPayloadHead(&inPayload, netStat.i, netStat.n, 0, NORMAL, sizeof(payloadHead));
+    
+  bool foundNetwork = false;
+  resetClock(&x);
   while (getClock(&x) <= INIT_WAIT && !foundNetwork) {
     if (rx()) {
       foundNetwork = true;
@@ -118,10 +131,14 @@ void setup() {
   }
 
   if (foundNetwork) {
-
-    
 #ifdef MULTICONNECT
-    connectToNetworkMultiConnect();
+    if (!connectToNetworkMultiConnect()) {
+#ifdef DEBUG
+      Serial.println(F("Starting over!!"));
+      StartUp();
+      return;
+#endif
+    }
 #else
     connectToNetwork();
 #endif
@@ -137,47 +154,43 @@ void setup() {
 #endif
   }
 
-#ifdef DEBUG
-  Serial.print(F("slotCount: "));
-  Serial.println(netStat.n);
-  Serial.print(F("Slot: "));
-  Serial.println(netStat.i);
-  Serial.print(F("My spot: "));
-  Serial.println(netStat.k);
-#endif
-
 #ifdef TEST
   printTask("connecting", getClock(&y));
 #endif
-
 }
 
-void connectToNetworkMultiConnect() {
+bool connectToNetworkMultiConnect() {
   netStat.i = inPayload.header.currentSlot;
-  netStat.n = inPayload.header.slotCount; // Don't increment n yet. 
+  netStat.n = inPayload.header.slotCount; // Don't increment n yet.
   netStat.k = inPayload.header.slotCount - 1; // EmptySlot, is 0-indexed
   setPayloadHead(&outPayload, netStat.i, netStat.n, address, JOIN, sizeof(payloadHead));
 
   /* Wait for emptyslot */
 
   bool foundNetwork = false;
+  int cnt = 0;
   nextSlot();
-  while (netStat.i != netStat.n - 1) {
+  while (netStat.i != netStat.n - 1 && cnt <3) {
     while (getClock(&x) <= DELTA_PROC); // Wait for user-code
     nextSlot();
     foundNetwork = false;
     while (getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
       if (rx()) {
         foundNetwork = true;
+        if (inPayload.header.mode != NORMAL ) {
+          nextSlot();
+          return false;
+        }
       }
     }
-    if(foundNetwork) {
+    if (foundNetwork) {
+      cnt++;
       waitForNextTimeslot(inPayloadSize); // Resets x
     } else {
       resetClock(&x);
     }
   }
-  
+
   /* Annouce yourself */
   while (getClock(&x) <= DELTA_PROC);
 #ifdef DEBUG
@@ -209,7 +222,7 @@ void connectToNetworkMultiConnect() {
         foundNetwork = true;
       }
     }
-    if(foundNetwork) {
+    if (foundNetwork) {
       waitForNextTimeslot(inPayloadSize); // Resets x
     } else {
       resetClock(&x);
@@ -220,15 +233,30 @@ void connectToNetworkMultiConnect() {
   if (verified) {
     /* Increment n */
     netStat.n = netStat.n + 1;
-    outPayload.header.slotCount = netStat.n; 
+    outPayload.header.slotCount = netStat.n;
     setPayloadHead(&outPayload, netStat.i,  netStat.n, address, JOIN, sizeof(payloadHead));
-    return;
+    return true;
   } else {
-    /* exp backoff */
 
-    /* retry */
-    Serial.println(F("Seppuku"));
-    while(true);
+    Serial.println(F("Exp-backoff"));
+    if (exponentialBackoffC < EXPONENTIALBACKOFFMAX) {
+      exponentialBackoffC++;
+    }
+
+    randomSeed(analogRead(0));
+    Serial.print(F("Chooseing random number in range [0, "));
+    Serial.print((1 << exponentialBackoffC) - 1);
+    Serial.print(F("] => "));
+    uint32_t framesToWaitBeforeRetrying = random(1 << exponentialBackoffC); // Random returnes 0 to argument - 1
+    Serial.println(framesToWaitBeforeRetrying);
+
+
+    Serial.print(F("Waiting: "));
+    Serial.print((framesToWaitBeforeRetrying * TIMESLOT_LEN * (netStat.n + 1)));
+    Serial.println(F("M$"));
+    
+    delay(framesToWaitBeforeRetrying * TIMESLOT_LEN * (netStat.n + 1));
+    return false;
   }
 }
 
