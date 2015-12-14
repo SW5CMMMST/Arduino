@@ -154,6 +154,9 @@ void StartUp() {
     resetClock(&x);
 #ifdef DEBUG
     Serial.println("Found no network, starting own");
+    Serial.print(F("test2: Starting network after: "));
+    Serial.print(millis() - 5000);
+    Serial.println(F(" [ms] Local time"));
 #endif
   }
 
