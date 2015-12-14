@@ -1,0 +1,10065 @@
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 61
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 180
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 125
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 60
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 125
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 119
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 60
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 119
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 117
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 117
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 125
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 119
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 119
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got
+:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 59
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 BE 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 118
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Tx
+Sent:
+0 5 AD 1
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+Device started!!
+....................
+Device started
+Address is 0xAD
+Got:
+0 2 BE 1
+Waiting for: 80 [ms]
+i = 1
+Announcing self
+Sent:
+1 2 AD 2
+Waiting for: 80 [ms]
+i = 0
+i = 1
+Got:
+0 2 BE 3 AD
+Join verified by device: BE
+Waiting for: 74 [ms]
+n: 3
+k: 1
+test2: Joining network after: 1066 [ms] Local timei = 2
+====================================
+Slot: 2 Rx
+Got:
+1 2 13 2
+Actual time taken to recive: 118
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+0 2 BE 1
+Actual time taken to recive: 176
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+0 2 BE 1
+Actual time taken to recive: 173
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+0 3 BE 1
+Actual time taken to recive: 39
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+2 3 13 2
+Actual time taken to recive: 47
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 3 13
+Waiting for: 74 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 3 89 2
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 3 89
+Waiting for: 74 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 3 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 134
+New device joined with addr: 137
+test2: Device 89 joined after 20786 [ms] Local timeWaiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 118
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 4 13 2
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 4 BE 3 13
+Actual time taken to recive: 118
+Waiting for: 74 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 4 AD 3 13
+Waiting for: 74 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 3 13
+Actual time taken to recive: 129
+Waiting for: 74 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 124
+New device joined with addr: 19
+test2: Device 13 joined after 55260 [ms] Local timeWaiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 108
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 58
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 109
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+3 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 110
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 113
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 113
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Tx
+Sent:
+1 5 AD 1
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+D
+evice started!!
+....................
+Device started
+Address is 0xAD
+Got:
+4 8 89 1
+Waiting for: 80 [ms]
+i = 5
+i = 6
+i = 7
+Announcing self
+Sent:
+7 8 AD 2
+Waiting for: 80 [ms]
+i = 0
+i = 1
+Timeouted while listening waiting to verify
+i = 2
+Timeouted while listening waiting to verify
+i = 3
+Timeouted while listening waiting to verify
+i = 4
+Timeouted while listening waiting to verify
+i = 5
+Got:
+4 8 89 3 AD
+Join verified by device: 89
+Waiting for: 74 [ms]
+n: 9
+k: 7
+test2: Joining network after: 2262 [ms] Local time
+i = 6
+====================================
+Slot: 6 Rx
+i = 7
+====================================
+Slot: 7 Tx
+Sent:
+7 9 AD 1
+Waiting for: 80 [ms]
+i = 8
+====================================
+Slot: 8 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Rx
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+i = 5
+====================================
+Slot: 5 Rx
+Got:
+0 2 BE 1
+Actual time taken to recive: 39
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 2 13 2
+Actual time taken to recive: 57
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+0 2 BE 3 13
+Actual time taken to recive: 195
+ProtocolMaintenanceed!
+Waiting for: 74 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+0 2 BE 1
+Actual time taken to recive: 173
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 3 13 1
+Actual time taken to recive: 114
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+Got:
+0 3 BE 1
+Actual time taken to recive: 39
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 3 13 1
+Actual time taken to recive: 39
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+1 3 13 1
+Actual time taken to recive: 198
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+0 3 BE 1
+Actual time taken to recive: 185
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 3 13 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+0 3 BE 1
+Actual time taken to recive: 184
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 3 13 1
+Actual time taken to recive: 114
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+0 3 BE 1
+Actual time taken to recive: 186
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 3 13 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 3 89 2
+Actual time taken to recive: 118
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+0 3 BE 3 89
+Actual time taken to recive: 194
+ProtocolMaintenanceed!
+Waiting for: 74 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+i = 2
+====================================
+Slot: 2 Rx
+i = 3
+====================================
+Slot: 3 Rx
+Got:
+0 3 BE 1
+Actual time taken to recive: 171
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 3 13 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+i = 5
+====================================
+Slot: 5 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 38
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 4 13 1
+Actual time taken to recive: 63
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 184
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 4 13 1
+Actual time taken to recive: 46
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 183
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 184
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 4 13 1
+Actual time taken to recive: 113
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 117
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 185
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 4 13 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 185
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 4 13 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 185
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 4 13 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 185
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 4 13 1
+Actual time taken to recive: 46
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 186
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 4 13 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 185
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 4 13 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 185
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 4 13 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 185
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 4 13 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Rx
+i = 4
+====================================
+Slot: 4 Rx
+Got:
+0 4 BE 1
+Actual time taken to recive: 185
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 4 13 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+Device started!!
+....................
+Device started
+Address is 0xAD
+Got:
+1 4 13 1
+Waiting for: 80 [ms]
+i = 2
+i = 3
+Got:
+2 4 89 1
+Waiting for: 80 [ms]
+Announcing self
+Sent:
+3 4 AD 2
+Waiting for: 80 [ms]
+i = 0
+i = 1
+Got:
+0 4 BE 3 AD
+Join verified by device: BE
+Waiting for: 74 [ms]
+n: 5
+k: 3
+test2: Joining network after: 1160 [ms] Local time
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+1 4 13 3 AD
+Actual time taken to recive: 121
+ProtocolMaintenanceed!
+Waiting for: 74 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 89 3 AD
+Actual time taken to recive: 115
+Waiting for: 74 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 39
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 65
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 118
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 118
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 113
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 118
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 113
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 56
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 113
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 56
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 184
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 188
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 56
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i
+= 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 50
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 119
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Sl▒Device started!!
+....................
+Device started
+Address is 0xAD
+Got:
+0 2 BE 1
+Waiting for: 80 [ms]
+i = 1
+Announcing self
+Sent:
+1 2 AD 2
+Waiting for: 80 [ms]
+i = 0
+i = 1
+Got:
+0 2 BE 1
+Waiting for: 80 [ms]
+i = 0
+Got:
+1 2 89 2
+Waiting for: 80 [ms]
+i = 1
+Got:
+0 2 BE 3 89
+Waiting for: 74 [ms]
+Exp-backoff
+Timeouted while listening waiting to verify
+Chooseing random number in range [0, 1] => 0
+Waiting: 0M$
+Starting over!!
+Got:
+0 2 BE 1
+Waiting for: 80 [ms]
+i = 1
+Announcing self
+Sent:
+1 2 AD 2
+Waiting for: 80 [ms]
+i = 0
+i = 1
+Got:
+1 2 13 2
+Waiting for: 80 [ms]
+i = 0
+Timeouted while listening waiting to verify
+i = 1
+Got:
+1 3 89 1
+Waiting for: 80 [ms]
+i = 0
+Got:
+0 2 BE 1
+Waiting for: 80 [ms]
+i = 1
+Timeouted while listening waiting to verify
+Exp-backoff
+Timeouted while listening waiting to verify
+Chooseing random number in range [0, 3] => 2
+Waiting: 1500M$
+Starting over!!
+Got:
+1 3 89 1
+Waiting for: 80 [ms]
+i = 2
+Announcing self
+Sent:
+2 3 AD 2
+Waiting for: 80 [ms]
+i = 0
+i = 1
+Timeouted while listening waiting to verify
+i = 2
+Timeouted while listening waiting to verify
+i = 0
+Got:
+1 3 89 1
+Waiting for: 80 [ms]
+i = 1
+Timeouted while listening waiting to verify
+i = 2
+Got:
+0 3 BE 1
+Waiting for: 80 [ms]
+i = 0
+Got:
+1 3 89 1
+Waiting for: 80 [ms]
+i = 1
+Timeouted while listening waiting to verify
+i = 2
+Timeouted while listening waiting to verify
+Exp-backoff
+Timeouted while listening waiting to verify
+Chooseing random number in range [0, 7] => 6
+Waiting: 6000M$
+Starting over!!
+Got:
+0 3 BE 1
+Waiting for: 80 [ms]
+i = 1
+i = 2
+Announcing self
+Sent:
+2 3 AD 2
+Waiting for: 80 [ms]
+i = 0
+i = 1
+Timeouted while listening waiting to verify
+i = 2
+Timeouted while listening waiting to verify
+i = 0
+Timeouted while listening waiting to verify
+i = 1
+Timeouted while listening waiting to verify
+i = 2
+Timeouted while listening waiting to verify
+i = 0
+Got:
+1 3 89 1
+Waiting for: 80 [ms]
+i = 1
+Timeouted while listening waiting to verify
+i = 2
+Got:
+0 3 BE 1
+Waiting for: 80 [ms]
+i = 0
+Got:
+1 3 89 1
+Waiting for: 80 [ms]
+i = 1
+Timeouted while listening waiting to verify
+i = 2
+Got:
+0 3 BE 1
+Waiting for: 80 [ms]
+Exp-backoff
+Timeouted while listening waiting to verify
+Chooseing random number in range [0, 15] => 6
+Waiting: 6000M$
+Starting over!!
+Got:
+1 3 89 1
+Waiting for: 80 [ms]
+i = 2
+Announcing self
+Sent:
+2 3 AD 2
+Waiting for: 80 [ms]
+i = 0
+i = 1
+Timeouted while listening waiting to verify
+i = 2
+Timeouted while listening waiting to verify
+i = 0
+Got:
+1 3 89 1
+Waiting for: 80 [ms]
+i = 1
+Timeouted while listening waiting to verify
+i = 2
+Got:
+0 3 BE 1
+Waiting for: 80 [ms]
+i = 0
+Got:
+1 3 89 1
+Waiting for: 80 [ms]
+i = 1
+Timeouted while listening waiting to verify
+i = 2
+Timeouted while listening waiting to verify
+Exp-backoff
+Timeouted while listening waiting to verify
+Chooseing random number in range [0, 31] => 20
+Waiting: 20000M$
+Starting over!!
+Got:
+0 3 BE 1
+Waiting for: 80 [ms]
+i = 1
+i = 2
+Got:
+0 4 BE 1
+Waiting for: 80 [ms]
+Announcing self
+Sent:
+2 4 AD 2
+Waiting for: 80 [ms]
+i = 3
+i = 0
+Got:
+2 4 13 1
+Waiting for: 80 [ms]
+i = 1
+Timeouted while listening waiting to verify
+i = 2
+Got:
+0 4 BE 1
+Waiting for: 80 [ms]
+i = 3
+Got:
+1 4 89 1
+Waiting for: 80 [ms]
+Exp-backoff
+Timeouted while listening waiting to verify
+Chooseing random number in range [0, 31] => 13
+Waiting: 16250M$
+Device started!!
+....................
+Device started
+Address is 0xAD
+Got:
+0 4 BE 1
+Waiting for: 80 [ms]
+i = 1
+i = 2
+Got:
+1 4 89 1
+Waiting for: 80 [ms]
+i = 3
+Got:
+2 4 13 1
+Waiting for: 80 [ms]
+Announcing self
+Sent:
+3 4 AD 2
+Waiting for: 80 [ms]
+i = 0
+i = 1
+Got:
+0 4 BE 3 AD
+Join verified by device: BE
+Waiting for: 74 [ms]
+n: 5
+k: 3
+test2: Joining network after: 1530 [ms] Local time
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+1 4 89 3 AD
+Actual time taken to recive: 121
+ProtocolMaintenanceed!
+Waiting for: 74 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 4 13 3 AD
+Actual time taken to recive: 116
+Waiting for: 74 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 39
+ProtocolMaintenanceed!
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 39
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 39
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 131
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 113
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 57
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 120
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 113
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 123
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 112
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 55
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 124
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 113
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 50
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 55
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====================================
+Slot: 1 Rx
+Got:
+1 5 89 1
+Actual time taken to recive: 121
+Waiting for: 80 [ms]
+i = 2
+====================================
+Slot: 2 Rx
+Got:
+2 5 13 1
+Actual time taken to recive: 122
+Waiting for: 80 [ms]
+i = 3
+====================================
+Slot: 3 Tx
+Sent:
+3 5 AD 1
+Waiting for: 80 [ms]
+i = 4
+====================================
+Slot: 4 Rx
+i = 0
+====================================
+
+++++++++++++++++++++++++++++++++++++
+
+====================================
+Slot: 0 Rx
+Got:
+0 5 BE 1
+Actual time taken to recive: 111
+Waiting for: 80 [ms]
+i = 1
+====

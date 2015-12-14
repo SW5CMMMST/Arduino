@@ -1,0 +1,51 @@
+Test af CCRC med samtidig connect:
+
+Gentag x (10?) gange:
+	Start en enhed, vent 5 sec, start alle andre enheder (2-4 andre?).
+	Mål tid det tager for hver enheder at starte.
+	Noter evt. random backoff tider. 
+
+
+Test 1:
+DEV RT		Local
+BE 	0		0
+AD 	10388	6249
+89	13493	8573
+13	79359	1382
+
+Test 2:
+DEV	RT		Local	diff
+BE	1251 	1251	-1251
+AD 	6374	1073	5301
+13 	10019	4387	5632
+89 	14081	8706	5375
+
+Test 3:
+DEV	RT		Local	diff
+BE	1251	1251	0
+AD 	6373	1284
+13 	11948	5592
+89 	13358	8104
+
+Test 4:
+DEV	RT		Local	diff
+BE	1251	1251
+AD 	31959	26638
+13 	10278	9736
+89 	10831	4204
+
+Test 5:
+DEV	RT		Local	diff
+BE	1251	1251
+AD 	16080	12080
+13 	17372	12812
+89 	13658	6152
+
+Test 6:
+DEV	RT		Local	diff
+BE	1251	1251
+AD 	12502	6999
+13 	17131	9261
+89 	8572	729
+
+

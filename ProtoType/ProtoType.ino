@@ -10,7 +10,7 @@
 #define RECV_LED 2
 #define LOSS_LED 3
 #define STAT_LED 13
-#define INIT_WAIT 5000  //Milliseconds to wait before initing own network
+#define INIT_WAIT 500  //Milliseconds to wait before initing own network
 #define COST 200
 
 #ifdef DEBUG
@@ -44,7 +44,7 @@ void loop() {
   t.update();
   rx();
 }
-
+  
 void rx(){
   uint8_t len = 0;
   uint8_t buff[24];
