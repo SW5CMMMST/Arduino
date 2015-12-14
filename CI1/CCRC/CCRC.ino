@@ -71,6 +71,8 @@ bool verifiedLast = false;
 uint8_t addressToVerify = 0x0;
 uint8_t exponentialBackoffC = 0;
 
+
+
 #ifdef TEST
 uint32_t y = 0;
 #endif
@@ -254,6 +256,10 @@ bool connectToNetworkMultiConnect() {
 
     Serial.print(F("k: "));
     Serial.println(netStat.k);
+
+    Serial.print(F("test2: Joining network after: "));
+    Serial.print(millis() - 5000);
+    Serial.println(F(" [ms] Local time"));
 #endif
     setPayloadHead(&outPayload, netStat.i,  netStat.n, address, JOIN, sizeof(payloadHead));
     return true;
@@ -553,6 +559,12 @@ void ProtocolMaintenance() {
 #ifdef DEBUG
     Serial.print(F("New device joined with addr: "));
     Serial.println(inPayload.header.address);
+    
+    Serial.print(F("test2: Device "));
+    Serial.print(inPayload.header.address, HEX);
+    Serial.print(F(" joined after "));    
+    Serial.print(millis() - 5000);
+    Serial.println(F(" [ms] Local time"));
 #endif
     outPayload.header.slotCount = inPayload.header.slotCount;
     netStat.n = inPayload.header.slotCount;
