@@ -10,8 +10,8 @@
 
 /*  Symbolic constants  */
 #ifdef DEBUG
-#define DELTA_COM 400
-#define DELTA_PROC 100
+#define DELTA_COM 200
+#define DELTA_PROC 50
 #else
 #define DELTA_COM 200
 #define DELTA_PROC 50
@@ -24,7 +24,7 @@
 
 /* User code constants */
 #define DO_SENSOR_POOLING
-#define SENDER_ADDRESS 0xAD
+#define SENDER_ADDRESS 0x11
 #define RECEIVER_OUTPIN 3
 
 #define SENDER_SENSOR_1 2
@@ -192,6 +192,10 @@ bool connectToNetworkMultiConnect() {
       resetClock(&x);
     }
   }
+
+  /* Ensure that network info is up-to date */
+  outPayload.header.slotCount = inPayload.header.slotCount;
+  netStat.n = inPayload.header.slotCount;
 
   /* Annouce yourself */
   while (getClock(&x) <= DELTA_PROC);
@@ -569,6 +573,7 @@ void ProtocolMaintenance() {
 
 #ifdef TEST
 void printTask(const char* mode, uint32_t time) {
+  Serial.
   Serial.print(mode);
   Serial.print("\t");
   Serial.println(time);
