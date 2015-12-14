@@ -238,6 +238,9 @@ bool connectToNetworkMultiConnect() {
 
   /* If verified join, else retry */
   if (verified) {
+    /* Ensure that network info is up-to date */
+    outPayload.header.slotCount = inPayload.header.slotCount;
+    netStat.n = inPayload.header.slotCount;
     netStat.k = netStat.n - 1;
     netStat.n = netStat.n + 1;
     verifiedLast = true; /* To prevent device from verifing in its first transmission */
