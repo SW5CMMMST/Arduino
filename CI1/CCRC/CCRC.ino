@@ -1,6 +1,7 @@
 /*  Mode defines  */
 #define DEBUG
 #define MULTICONNECT
+#define MULTISTART
 
 /*  Library includes  */
 #include <RH_ASK.h>
@@ -21,6 +22,7 @@
 #define PAYLOAD_MAX_SIZE 16
 #define GUARD_TIME_BEFORE_TX 30
 #define EXPONENTIALBACKOFFMAX 5
+#define KILL_CHANCE_IN_PERCENT 10
 
 /* User code constants */
 #define DO_SENSOR_POOLING
@@ -71,7 +73,9 @@ bool verifiedLast = false;
 uint8_t addressToVerify = 0x0;
 uint8_t exponentialBackoffC = 0;
 
-
+#ifdef MULTISTART
+uint8_t failedCreateAttemptCounter = 0;
+#endif
 
 #ifdef TEST
 uint32_t y = 0;
@@ -102,6 +106,9 @@ void setup() {
   // Get the address of the device
   Addr a;
   address = a.get();
+
+  randomSeed(analogRead(0) + address);
+
 #ifdef DEBUG
   Serial.println(F("Device started"));
   Serial.print(F("Address is 0x"));
@@ -126,7 +133,20 @@ void StartUp() {
 
   bool foundNetwork = false;
   resetClock(&x);
+#ifdef MULTISTART
+  // Get random for exp back
+  uint32_t rng = random((1 << failedCreateAttemptCounter) - 1);
+#ifdef DEBUG
+  Serial.print(F("Random extra startup time is: "));
+  Serial.print(rng);
+  Serial.print(F(" * "));
+  Serial.print(TIMESLOT_LEN);
+  Serial.println(F(" [ms]"));
+#endif
+  while (getClock(&x) <= (INIT_WAIT + (rng * TIMESLOT_LEN)) && !foundNetwork) {
+#else
   while (getClock(&x) <= INIT_WAIT && !foundNetwork) {
+#endif
     if (rx()) {
       foundNetwork = true;
       waitForNextTimeslot(inPayloadSize); // This also resets x
@@ -275,7 +295,7 @@ bool connectToNetworkMultiConnect() {
       exponentialBackoffC++;
     }
 
-    randomSeed(analogRead(0));
+
     uint32_t framesToWaitBeforeRetrying = random(1 << exponentialBackoffC); // Random returnes 0 to argument - 1
 #ifdef DEBUG
     Serial.println(F("Timeouted while listening waiting to verify"));
@@ -435,6 +455,25 @@ void loop() {
     if (foundNetwork) {
       waitForNextTimeslot(inPayloadSize);
     } else {
+#ifdef MULTISTART
+      if (netStat.n == 2) {
+
+#ifdef DEBUG
+        Serial.println(F("I AM ALONE"));
+#endif
+        if (random(100) < KILL_CHANCE_IN_PERCENT) {
+#ifdef DEBUG
+          Serial.println(F("Time to kill myself"));
+#endif
+          failedCreateAttemptCounter += failedCreateAttemptCounter < 5 ? 1 : 0;
+          netStat.n = 0;
+          netStat.i = 0;
+          netStat.k = 0;
+          StartUp();
+          outPayload.header.mode = NORMAL;
+        }
+      }
+#endif
       resetClock(&x);
     }
   }
@@ -562,10 +601,10 @@ void ProtocolMaintenance() {
 #ifdef DEBUG
     Serial.print(F("New device joined with addr: "));
     Serial.println(inPayload.header.address);
-    
+
     Serial.print(F("test2: Device "));
     Serial.print(inPayload.header.address, HEX);
-    Serial.print(F(" joined after "));    
+    Serial.print(F(" joined after "));
     Serial.print(millis() - 5000);
     Serial.println(F(" [ms] Local time"));
 #endif
