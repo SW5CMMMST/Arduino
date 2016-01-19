@@ -35,6 +35,10 @@
 #define SENDER_SENSOR_2 3
 #define RECEIVER_2_ADDRESS 0x89
 
+/* Demo stuff */
+#define SEND_LED 5
+#define RECEIVE_LED 6
+
 /*  Data structures  */
 struct payloadHead {
   uint8_t currentSlot;
@@ -101,7 +105,9 @@ void setup() {
   }
 
   pinMode(13, OUTPUT);
-
+  pinMode(SEND_LED, OUTPUT);
+  pinMode(RECEIVE_LED, OUTPUT);
+  
   outPayload.data[1] = (uint8_t) '\0';
   // Get the address of the device
   Addr a;
@@ -199,6 +205,7 @@ bool connectToNetworkMultiConnect() {
     while (getClock(&x) <= DELTA_PROC); // Wait for user-code
     nextSlot();
     foundNetwork = false;
+    
     while (getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
       if (rx()) {
         foundNetwork = true;
@@ -531,6 +538,7 @@ void readsPayloadFromBuffer(struct payload * payloadDest, uint8_t* payloadBuffer
 }
 
 bool rx() {
+  digitalWrite(RECEIVE_LED, HIGH);
   uint8_t payloadBuffer[PAYLOAD_MAX_SIZE];
   memset(payloadBuffer, 'a', sizeof(payloadBuffer));
   uint8_t payloadBufferSize = sizeof(payloadBuffer);
@@ -543,9 +551,11 @@ bool rx() {
   } else {
     return false;
   }
+  digitalWrite(RECEIVE_LED, LOW);
 }
 
 void tx(uint8_t * data, uint8_t dataSize) {
+  digitalWrite(SEND_LED, HIGH);
   uint8_t payloadBuffer[PAYLOAD_MAX_SIZE];
   memset(payloadBuffer, 'a', sizeof(payloadBuffer));
   payloadBuffer[0] = outPayload.header.currentSlot;
@@ -565,6 +575,7 @@ void tx(uint8_t * data, uint8_t dataSize) {
     delay(sentTime / 10);
   }
   rh.waitPacketSent();
+  digitalWrite(SEND_LED, LOW);
 }
 
 
@@ -643,10 +654,12 @@ void userCodeRunonce() {
     usercodeData[2] = RECEIVER_2_ADDRESS;
     usercodeDataSize = 4;
 
+    /* Led states should be permanent now. 
     if (netStat.i == netStat.k) {
       usercodeData[1] = LOW;
       usercodeData[3] = LOW;
     }
+    */
 
     userSensorPool();
   } else {
