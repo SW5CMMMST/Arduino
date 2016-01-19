@@ -11,8 +11,8 @@
 
 /*  Symbolic constants  */
 #ifdef DEBUG
-#define DELTA_COM 200
-#define DELTA_PROC 50
+#define DELTA_COM 500
+#define DELTA_PROC 100
 #else
 #define DELTA_COM 200
 #define DELTA_PROC 50
@@ -547,11 +547,13 @@ bool rx() {
     rh.printBuffer("Got:", payloadBuffer, payloadBufferSize);
 #endif
     readsPayloadFromBuffer(&inPayload, payloadBuffer, payloadBufferSize);
+    digitalWrite(RECEIVE_LED, LOW);
     return true;
   } else {
+    digitalWrite(RECEIVE_LED, LOW);
     return false;
   }
-  digitalWrite(RECEIVE_LED, LOW);
+  
 }
 
 void tx(uint8_t * data, uint8_t dataSize) {
