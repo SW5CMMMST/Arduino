@@ -107,7 +107,7 @@ void setup() {
   pinMode(13, OUTPUT);
   pinMode(SEND_LED, OUTPUT);
   pinMode(RECEIVE_LED, OUTPUT);
-  
+
   outPayload.data[1] = (uint8_t) '\0';
   // Get the address of the device
   Addr a;
@@ -205,7 +205,7 @@ bool connectToNetworkMultiConnect() {
     while (getClock(&x) <= DELTA_PROC); // Wait for user-code
     nextSlot();
     foundNetwork = false;
-    
+
     while (getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
       if (rx()) {
         foundNetwork = true;
@@ -508,16 +508,16 @@ void waitForNextTimeslot(uint32_t payloadSize) {
 
 uint32_t sentTimeCalculator(uint32_t payloadSize) {
   /* Here we wait until the timeslot is over.
-   * To sync with the network we wait untill their timeslot is over.
-   * Worst case wait time: f(x) = 6.0101 ∗ x + 65.7826
-   * f(PAYLOAD_MAX_SIZE) = f(16) = 161.9416 [ms]
-   * f(PAYLOAD_MAX_SIZE) + GUARD_TIME_BEFORE_TX = 191.9416 [ms]
-   * Which is strictly less than DELTA_COM (200 [ms])
-   *
-   * To calculate the start of the next slot we take the size of the message
-   * recived, and calculate how much is left of the timeslot.
-   * Then we hope we are correct and it syncs up.
-   */
+     To sync with the network we wait untill their timeslot is over.
+     Worst case wait time: f(x) = 6.0101 ∗ x + 65.7826
+     f(PAYLOAD_MAX_SIZE) = f(16) = 161.9416 [ms]
+     f(PAYLOAD_MAX_SIZE) + GUARD_TIME_BEFORE_TX = 191.9416 [ms]
+     Which is strictly less than DELTA_COM (200 [ms])
+
+     To calculate the start of the next slot we take the size of the message
+     recived, and calculate how much is left of the timeslot.
+     Then we hope we are correct and it syncs up.
+  */
 
   // inPayloadSize is always in the range [3;16]
   // So sentTime is: [83,8129; 161,9416] with floats and [84;162] with int32_tegers
@@ -553,7 +553,7 @@ bool rx() {
     digitalWrite(RECEIVE_LED, LOW);
     return false;
   }
-  
+
 }
 
 void tx(uint8_t * data, uint8_t dataSize) {
@@ -656,11 +656,11 @@ void userCodeRunonce() {
     usercodeData[2] = RECEIVER_2_ADDRESS;
     usercodeDataSize = 4;
 
-    /* Led states should be permanent now. 
-    if (netStat.i == netStat.k) {
+    /* Led states should be permanent now.
+      if (netStat.i == netStat.k) {
       usercodeData[1] = LOW;
       usercodeData[3] = LOW;
-    }
+      }
     */
 
     userSensorPool();
@@ -672,6 +672,14 @@ void userCodeRunonce() {
         Serial.println(F("Turning on LED"));
 #endif
         digitalWrite(RECEIVER_OUTPIN, inPayload.data[i + 1] == 1 ? HIGH : LOW);
+      }
+      
+      if (inPayload.data[i] == 0x2D) {
+        Serial.println("NEXT");
+      }
+      
+      if (inPayload.data[i] == 0x1D) {
+        Serial.println("PREV");
       }
     }
     usercodeDataSize = 0;
