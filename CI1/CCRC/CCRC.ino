@@ -35,6 +35,8 @@
 #define SENDER_SENSOR_2 3
 #define RECEIVER_2_ADDRESS 0x89
 
+#define PULSETOTOGGLE
+
 /*  Data structures  */
 struct payloadHead {
   uint8_t currentSlot;
@@ -72,6 +74,9 @@ bool verifyNext = false;
 bool verifiedLast = false;
 uint8_t addressToVerify = 0x0;
 uint8_t exponentialBackoffC = 0;
+#ifdef PULSETOTOGGLE
+uint8_t pinState = 0;
+#endif
 
 #ifdef MULTISTART
 uint8_t failedCreateAttemptCounter = 0;
@@ -656,7 +661,25 @@ void userCodeRunonce() {
 #ifdef DEBUG
         Serial.println(F("Turning on LED"));
 #endif
+
+#ifdef PULSETOTOGGLE
+
+        if(inPayload.data[i + 1] == HIGH) {
+          if(pinState == 0) {
+            pinState = 1;
+            digitalWrite(RECEIVER_OUTPIN, HIGH);
+          } else if(pinState == 2 {
+            digitalWrite(RECEIVER_OUTPIN, LOW);
+            pinState = 0;
+          }
+        } else {
+          if(pinState == 1) {
+            pinState = 2;
+          }
+        }
+#else
         digitalWrite(RECEIVER_OUTPIN, inPayload.data[i + 1] == 1 ? HIGH : LOW);
+#endif
       }
     }
     usercodeDataSize = 0;
