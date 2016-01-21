@@ -11,7 +11,7 @@
 
 /*  Symbolic constants  */
 #ifdef DEBUG
-#define DELTA_COM 500
+#define DELTA_COM 400
 #define DELTA_PROC 100
 #else
 #define DELTA_COM 200
@@ -447,7 +447,7 @@ void loop() {
     while (getClock(&x) <= TIMESLOT_LEN && !foundNetwork) {
 #ifdef DO_SENSOR_POOLING
       if (address == SENDER_ADDRESS)
-        userSensorPool();
+        userSensorPoll();
 #endif
       if (rx()) {
 #ifdef DEBUG
@@ -579,7 +579,7 @@ void tx(uint8_t * data, uint8_t dataSize) {
   rh.send(payloadBuffer, sizeof(payloadHead) + dataSize);
   uint32_t sentTime = sentTimeCalculator(sizeof(payloadHead) + dataSize) - 20;
   for (int i = 0; i < 10; i++) {
-    userSensorPool();
+    userSensorPoll();
     delay(sentTime / 10);
   }
   rh.waitPacketSent();
@@ -674,7 +674,7 @@ void userCodeRunonce() {
     }
 
 
-    userSensorPool();
+    userSensorPoll();
   } else {
     pinMode(RECEIVER_OUTPIN, OUTPUT);
     for (int i = 0; i < sizeof(inPayload.data); i++) {
@@ -718,11 +718,11 @@ void userCodeRunonce() {
 
 /* Place user code which should be executed repeatly here */
 void userCodeRepeat() {
-  userSensorPool();
+  userSensorPoll();
 }
 
 /* Place user code which should be executed repeatly here concurrently while reciving */
-void userSensorPool() {
+void userSensorPoll() {
   if (digitalRead(SENDER_SENSOR_1) == LOW) {
     usercodeData[1] = HIGH;
   }
