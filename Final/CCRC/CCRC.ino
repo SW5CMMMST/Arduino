@@ -29,14 +29,8 @@
 #define SENDER_ADDRESS 0x89
 #define RECEIVER_OUTPIN 3
 
-#define SENDER_SENSOR_1 2
-#define RECEIVER_1_ADDRESS 0x13
-
-#define SENDER_SENSOR_2 3
-#define RECEIVER_2_ADDRESS 0x89
-
-
-#define PULSETOTOGGLE
+#define SENDER_SENSOR_1 9
+//#define PULSETOTOGGLE
 
 /* Demo stuff */
 #define SEND_LED 5
@@ -113,6 +107,8 @@ void setup() {
   pinMode(13, OUTPUT);
   pinMode(SEND_LED, OUTPUT);
   pinMode(RECEIVE_LED, OUTPUT);
+  pinMode(3, OUTPUT);
+  digitalWrite(3, HIGH);
 
   outPayload.data[1] = (uint8_t) '\0';
   // Get the address of the device
@@ -655,64 +651,76 @@ void printTask(const char* mode, uint32_t time) {
 
 /* Place user code which should be executed once pr. timeslot */
 void userCodeRunonce() {
+  pinMode(SENDER_SENSOR_1, INPUT_PULLUP);
+  usercodeDataSize = 1;
   if (address == SENDER_ADDRESS) {
-    pinMode(SENDER_SENSOR_1, INPUT_PULLUP);
-    pinMode(SENDER_SENSOR_2, INPUT_PULLUP);
-    
+#ifdef DEBUG
+    Serial.println(F("FAKKIT"));
+#endif
+
     pinMode(2, INPUT_PULLUP);
     pinMode(4, INPUT_PULLUP);
-    usercodeData[0] = RECEIVER_1_ADDRESS;
-    usercodeData[2] = RECEIVER_2_ADDRESS;
-    usercodeDataSize = 5;
+    usercodeDataSize = 4;
 
     if (netStat.i == netStat.k) {
-      usercodeData[1] = LOW;
-      usercodeData[3] = LOW;
-      usercodeData[4] = 0;
-      usercodeData[5] = 0;
-
+      usercodeData[2] = 0;
+      usercodeData[3] = 0;
     }
-
-
-    userSensorPoll();
   } else {
-    pinMode(RECEIVER_OUTPIN, OUTPUT);
-    for (int i = 0; i < sizeof(inPayload.data); i++) {
-      if (inPayload.data[i] == address) {
+    usercodeDataSize = 2;
+  }
+
+  if (address == 0x89) {
+    usercodeData[0] = 0x13;
+  } else if (address == 0x13) {
+    usercodeData[0] = 0xBE;
+  } else if (address == 0xBE) {
+    usercodeData[0] = 0x89;
+  }
+
+  if (netStat.i == netStat.k) {
+    usercodeData[1] = LOW;
+  }
+
+  userSensorPoll();
+  pinMode(RECEIVER_OUTPIN, OUTPUT);
+
+  for (int i = 0; i < sizeof(inPayload.data); i++) {
+    if (inPayload.data[i] == address) {
 #ifdef DEBUG
-        Serial.println(F("Turning on LED"));
+      Serial.println(F("Turning on LED"));
 #endif
 #ifdef PULSETOTOGGLE
 
-        if (inPayload.data[i + 1] == HIGH) {
-          if (pinState == 0) {
-            pinState = 1;
-            digitalWrite(RECEIVER_OUTPIN, HIGH);
-          } else if (pinState == 2) {
-            digitalWrite(RECEIVER_OUTPIN, LOW);
-            pinState = 0;
-          }
-        } else {
-          if (pinState == 1) {
-            pinState = 2;
-          }
+      if (inPayload.data[i + 1] == HIGH) {
+        if (pinState == 0) {
+          pinState = 1;
+          digitalWrite(RECEIVER_OUTPIN, HIGH);
+        } else if (pinState == 2) {
+          digitalWrite(RECEIVER_OUTPIN, LOW);
+          pinState = 0;
         }
+      } else {
+        if (pinState == 1) {
+          pinState = 2;
+        }
+      }
 #else
-        digitalWrite(RECEIVER_OUTPIN, inPayload.data[i + 1] == 1 ? HIGH : LOW);
+      pinMode(RECEIVER_OUTPIN, OUTPUT);
+      digitalWrite(RECEIVER_OUTPIN, inPayload.data[i + 1] == 1 ? HIGH : LOW);
 #endif
-      }
-
-      if (inPayload.data[i] == 0x2D) {
-        Serial.println("NEXT");
-        inPayload.data[i] = 0;
-      }
-
-      if (inPayload.data[i] == 0x1D) {
-        Serial.println("PREV");
-        inPayload.data[i] = 0;
-      }
     }
-    usercodeDataSize = 0;
+
+    if (inPayload.data[i] == 0x2D) {
+      Serial.println("NEXT");
+      inPayload.data[i] = 0;
+    }
+
+    if (inPayload.data[i] == 0x1D) {
+      Serial.println("PREV");
+      inPayload.data[i] = 0;
+    }
+
   }
 }
 
@@ -727,16 +735,14 @@ void userSensorPoll() {
     usercodeData[1] = HIGH;
   }
 
-  if (digitalRead(SENDER_SENSOR_2) == LOW) {
-    usercodeData[3] = HIGH;
-  }
+  if (address == SENDER_ADDRESS) {
+    if (digitalRead(2) == LOW) {
+      usercodeData[2] = 0x1D;
+    }
 
-  if (digitalRead(2) == LOW) {
-    usercodeData[4] = 0x1D;
-  }
-
-  if (digitalRead(4) == LOW) {
-    usercodeData[4] = 0x2D;
+    if (digitalRead(4) == LOW) {
+      usercodeData[3] = 0x2D;
+    }
   }
 
 }
