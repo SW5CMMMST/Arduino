@@ -26,7 +26,7 @@
 
 /* User code constants */
 #define DO_SENSOR_POOLING
-#define SENDER_ADDRESS 0xAD
+#define SENDER_ADDRESS 0x89
 #define RECEIVER_OUTPIN 3
 
 #define SENDER_SENSOR_1 2
@@ -34,6 +34,9 @@
 
 #define SENDER_SENSOR_2 3
 #define RECEIVER_2_ADDRESS 0x89
+
+
+#define PULSETOTOGGLE
 
 /* Demo stuff */
 #define SEND_LED 5
@@ -76,6 +79,9 @@ bool verifyNext = false;
 bool verifiedLast = false;
 uint8_t addressToVerify = 0x0;
 uint8_t exponentialBackoffC = 0;
+#ifdef PULSETOTOGGLE
+uint8_t pinState = 0;
+#endif
 
 #ifdef MULTISTART
 uint8_t failedCreateAttemptCounter = 0;
@@ -87,8 +93,8 @@ uint32_t y = 0;
 
 /*  Setup function  */
 void setup() {
-#ifdef DEBUG
   Serial.begin(9600);
+#ifdef DEBUG
   Serial.println(F("Device started!!"));
   for (int i = 0; i < 20; i++) {
     Serial.print(F("."));
@@ -652,16 +658,21 @@ void userCodeRunonce() {
   if (address == SENDER_ADDRESS) {
     pinMode(SENDER_SENSOR_1, INPUT_PULLUP);
     pinMode(SENDER_SENSOR_2, INPUT_PULLUP);
+    
+    pinMode(2, INPUT_PULLUP);
+    pinMode(4, INPUT_PULLUP);
     usercodeData[0] = RECEIVER_1_ADDRESS;
     usercodeData[2] = RECEIVER_2_ADDRESS;
-    usercodeDataSize = 4;
+    usercodeDataSize = 5;
 
-    /* Led states should be permanent now.
-      if (netStat.i == netStat.k) {
+    if (netStat.i == netStat.k) {
       usercodeData[1] = LOW;
       usercodeData[3] = LOW;
-      }
-    */
+      usercodeData[4] = 0;
+      usercodeData[5] = 0;
+
+    }
+
 
     userSensorPool();
   } else {
@@ -671,15 +682,34 @@ void userCodeRunonce() {
 #ifdef DEBUG
         Serial.println(F("Turning on LED"));
 #endif
+#ifdef PULSETOTOGGLE
+
+        if (inPayload.data[i + 1] == HIGH) {
+          if (pinState == 0) {
+            pinState = 1;
+            digitalWrite(RECEIVER_OUTPIN, HIGH);
+          } else if (pinState == 2) {
+            digitalWrite(RECEIVER_OUTPIN, LOW);
+            pinState = 0;
+          }
+        } else {
+          if (pinState == 1) {
+            pinState = 2;
+          }
+        }
+#else
         digitalWrite(RECEIVER_OUTPIN, inPayload.data[i + 1] == 1 ? HIGH : LOW);
+#endif
       }
-      
+
       if (inPayload.data[i] == 0x2D) {
         Serial.println("NEXT");
+        inPayload.data[i] = 0;
       }
-      
+
       if (inPayload.data[i] == 0x1D) {
         Serial.println("PREV");
+        inPayload.data[i] = 0;
       }
     }
     usercodeDataSize = 0;
@@ -700,5 +730,14 @@ void userSensorPool() {
   if (digitalRead(SENDER_SENSOR_2) == LOW) {
     usercodeData[3] = HIGH;
   }
+
+  if (digitalRead(2) == LOW) {
+    usercodeData[4] = 0x1D;
+  }
+
+  if (digitalRead(4) == LOW) {
+    usercodeData[4] = 0x2D;
+  }
+
 }
 
